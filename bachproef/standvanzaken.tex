@@ -7,45 +7,375 @@
 
 % Pas na deze inleidende paragraaf komt de eerste sectiehoofding.
 
-Dit hoofdstuk bevat je literatuurstudie. De inhoud gaat verder op de inleiding, maar zal het onderwerp van de bachelorproef *diepgaand* uitspitten. De bedoeling is dat de lezer na lezing van dit hoofdstuk helemaal op de hoogte is van de huidige stand van zaken (state-of-the-art) in het onderzoeksdomein. Iemand die niet vertrouwd is met het onderwerp, weet nu voldoende om de rest van het verhaal te kunnen volgen, zonder dat die er nog andere informatie moet over opzoeken \autocite{Pollefliet2011}.
+% Dit hoofdstuk bevat je literatuurstudie. De inhoud gaat verder op de inleiding, maar zal het onderwerp van de bachelorproef *diepgaand* uitspitten. De bedoeling is dat de lezer na lezing van dit hoofdstuk helemaal op de hoogte is van de huidige stand van zaken (state-of-the-art) in het onderzoeksdomein. Iemand die niet vertrouwd is met het onderwerp, weet nu voldoende om de rest van het verhaal te kunnen volgen, zonder dat die er nog andere informatie moet over opzoeken \autocite{Pollefliet2011}.
 
-Je verwijst bij elke bewering die je doet, vakterm die je introduceert, enz.\ naar je bronnen. In \LaTeX{} kan dat met het commando \texttt{$\backslash${textcite\{\}}} of \texttt{$\backslash${autocite\{\}}}. Als argument van het commando geef je de ``sleutel'' van een ``record'' in een bibliografische databank in het Bib\LaTeX{}-formaat (een tekstbestand). Als je expliciet naar de auteur verwijst in de zin (narratieve referentie), gebruik je \texttt{$\backslash${}textcite\{\}}. Soms is de auteursnaam niet expliciet een onderdeel van de zin, dan gebruik je \texttt{$\backslash${}autocite\{\}} (referentie tussen haakjes). Dit gebruik je bv.~bij een citaat, of om in het bijschrift van een overgenomen afbeelding, broncode, tabel, enz. te verwijzen naar de bron. In de volgende paragraaf een voorbeeld van elk.
+% Je verwijst bij elke bewering die je doet, vakterm die je introduceert, enz.\ naar je bronnen. In \LaTeX{} kan dat met het commando \texttt{$\backslash${textcite\{\}}} of \texttt{$\backslash${autocite\{\}}}. Als argument van het commando geef je de ``sleutel'' van een ``record'' in een bibliografische databank in het Bib\LaTeX{}-formaat (een tekstbestand). Als je expliciet naar de auteur verwijst in de zin (narratieve referentie), gebruik je \texttt{$\backslash${}textcite\{\}}. Soms is de auteursnaam niet expliciet een onderdeel van de zin, dan gebruik je \texttt{$\backslash${}autocite\{\}} (referentie tussen haakjes). Dit gebruik je bv.~bij een citaat, of om in het bijschrift van een overgenomen afbeelding, broncode, tabel, enz. te verwijzen naar de bron. In de volgende paragraaf een voorbeeld van elk.
 
-\textcite{Knuth1998} schreef een van de standaardwerken over sorteer- en zoekalgoritmen. Experten zijn het erover eens dat cloud computing een interessante opportuniteit vormen, zowel voor gebruikers als voor dienstverleners op vlak van informatietechnologie~\autocite{Creeger2009}.
+% \textcite{Knuth1998} schreef een van de standaardwerken over sorteer- en zoekalgoritmen. Experten zijn het erover eens dat cloud computing een interessante opportuniteit vormen, zowel voor gebruikers als voor dienstverleners op vlak van informatietechnologie~\autocite{Creeger2009}.
 
-Let er ook op: het \texttt{cite}-commando voor de punt, dus binnen de zin. Je verwijst meteen naar een bron in de eerste zin die erop gebaseerd is, dus niet pas op het einde van een paragraaf.
+% Let er ook op: het \texttt{cite}-commando voor de punt, dus binnen de zin. Je verwijst meteen naar een bron in de eerste zin die erop gebaseerd is, dus niet pas op het einde van een paragraaf.
 
-\begin{figure}
+% \begin{figure}
+%   \centering
+%   \includegraphics[width=0.8\textwidth]{grail.jpg}
+%   \caption[Voorbeeld figuur.]{\label{fig:grail}Voorbeeld van invoegen van een figuur. Zorg altijd voor een uitgebreid bijschrift dat de figuur volledig beschrijft zonder in de tekst te moeten gaan zoeken. Vergeet ook je bronvermelding niet!}
+% \end{figure}
+
+% \begin{listing}
+%   \begin{minted}{python}
+%     import pandas as pd
+%     import seaborn as sns
+
+%     penguins = sns.load_dataset('penguins')
+%     sns.relplot(data=penguins, x="flipper_length_mm", y="bill_length_mm", hue="species")
+%   \end{minted}
+%   \caption[Voorbeeld codefragment]{Voorbeeld van het invoegen van een codefragment.}
+% \end{listing}
+
+% \lipsum[7-20]
+
+% \begin{table}
+%   \centering
+%   \begin{tabular}{lcr}
+%     \toprule
+%     \textbf{Kolom 1} & \textbf{Kolom 2} & \textbf{Kolom 3} \\
+%     $\alpha$         & $\beta$          & $\gamma$         \\
+%     \midrule
+%     A                & 10.230           & a                \\
+%     B                & 45.678           & b                \\
+%     C                & 99.987           & c                \\
+%     \bottomrule
+%   \end{tabular}
+%   \caption[Voorbeeld tabel]{\label{tab:example}Voorbeeld van een tabel.}
+% \end{table}
+
+In dit hoofdstuk wordt de bestaande kennis en literatuur rond het onderwerp van deze
+bachelorproef systematisch in kaart gebracht. De stand van zaken is opgebouwd rond drie
+grote thema's. Eerst wordt het probleemdomein geschetst: wat is de context van
+toegankelijkheidsevaluaties in de Vlaamse huisartsenpraktijk, welke studies bestaan er al,
+waar knelt het schoentje en voor wie wordt dit onderzoek gevoerd? Vervolgens wordt het
+technologisch landschap verkend: welke tools bestaan er vandaag voor digitale bevragingen,
+hoe verhouden die zich tot de noden van dit project, en welke keuzes zijn gemaakt voor het
+framework en de authenticatie? Ten slotte worden de succescriteria en evaluatiemethoden
+besproken die bepalen of de proof-of-concept interface haar doel bereikt.
+
+\section{Het probleemdomein}
+\label{sec:probleemdomein}
+
+\subsection{Bestaande studies}
+\label{subsec:bestaande-studies}
+
+De toegankelijkheid van huisartsenpraktijken is in Vlaanderen de afgelopen jaren een
+toenemend beleidsprioriteit geworden. Het Federaal Kenniscentrum voor de Gezondheidszorg
+(KCE) onderwerpt het Belgische gezondheidszorgsysteem regelmatig aan een grondige analyse,
+waarbij toegankelijkheid van zorg een van de beoordelingscriteria is \autocite{Merckx2023}.
+Ondanks de brede erkenning van het probleem zijn er in Vlaanderen slechts een beperkt aantal
+wetenschappelijke studies die de toegankelijkheid van de huisartsenpraktijk systematisch en
+empirisch onderzoeken \autocite{Rampelberg2025}.\\
+
+Het meest omvangrijke Vlaamse onderzoek op dit vlak is het rapport Toegankelijkheid
+Huisartsgeneeskunde, uitgevoerd in opdracht van Domus Medica, UGent (Vakgroep
+Volksgezondheid en Eerstelijnszorg), AContrario en VIVEL \autocite{Merckx2023}. Dit project
+doorliep twee pilootfases en ontwikkelde stapsgewijs een gevalideerde indicatorenset voor het
+meten van toegankelijkheid. Vertrekkend vanuit een literatuuronderzoek werd een initiële set
+van 129 indicatoren opgesteld (set 1.0), die op basis van relevantie, beschikbaarheid en
+haalbaarheid werd gereduceerd tot 58 (set 2.0). Na cognitieve interviews en analyse van de
+verzamelde pilootdata werd de set verder verfijnd tot 51 indicatoren (set 3.0). Een
+interbeoordelaarsanalyse, test-hertestsrudie en expertenbevraging resulteerden uiteindelijk in
+een finale set 4.0 van 38 indicatoren, die zowel zorgaanbod als zorgnood omvat.\\
+
+In Nederland beschikt het onderzoekscentrum NIVEL al jarenlang over een actief
+monitoringsysteem voor huisartsenpraktijken, dat grootschalige en longitudinale data oplevert
+over organisatie, capaciteit en toegankelijkheid van de eerstelijnszorg \autocite{Rampelberg2025}.
+Dit contrasteert sterk met de Vlaamse situatie, waar gestructureerde en herhaalde metingen
+vooralsnog ontbreken. De zoektocht naar relevant materiaal voor de Vlaamse context vereist
+dan ook een uitbreiding naar vakbladen, nieuwsberichten en grijze literatuur.
+
+\subsection{Pijnpunten in de huidige evaluatie-instrumenten}
+\label{subsec:pijnpunten}
+
+Ondanks de wetenschappelijke kwaliteit van de ontwikkelde indicatorenset en vragenlijsten,
+toont het rapport Toegankelijkheid Huisartsgeneeskunde aan dat de praktische inzetbaarheid
+ervan ernstig belemmerd wordt door een reeks structurele knelpunten \autocite{Merckx2023}.\\
+
+Een eerste en meest fundamenteel pijnpunt is de \textbf{lengte en complexiteit} van de bevraging.
+Huisartsenkringen geven aan dat de omvang van de vragenlijst en de uitgebreide set criteria
+een bijkomende werklast betekenen voor huisartsen die toch al onder tijdsdruk staan. De
+verwachting is dan ook realistisch dat artsen geen tijd zullen nemen om de vragenlijst volledig
+en correct in te vullen \autocite{Merckx2023}.\\
+
+Een tweede knelpunt is de \textbf{inconsistente interpretatie} van indicatoren. Uit de
+interbeoordelaarsanalyse bleek dat meerdere categorische variabelen een beperkte
+betrouwbaarheid vertonen wanneer twee medewerkers uit dezelfde praktijk de vragenlijst
+onafhankelijk invullen. Dit wijst erop dat de formulering van bepaalde vragen voor
+uiteenlopende interpretaties vatbaar is, wat de validiteit van de verzamelde data
+ondermijnt \autocite{Merckx2023}. De test-herteststudie bevestigde bovendien dat antwoorden
+soms ongewild beïnvloed worden door omstandigheden zoals het tijdstip van invullen of de
+lengte van de bevraging.\\
+
+Een derde pijnpunt is het \textbf{wantrouwen} ten aanzien van de dataverzameling en het gebruik
+ervan. Kringen vrezen dat de overheid de verzamelde data zal gebruiken als controlemiddel,
+bijvoorbeeld door praktijken te vergelijken op harde outputcijfers zoals het aantal
+patiëntenconsulten, zonder rekening te houden met de specifieke zorglast of context van een
+praktijk \autocite{Merckx2023}. Dit wantrouwen leidt ertoe dat kringen terughoudend zijn om
+deel te nemen, wat de representativiteit van de data beperkt.\\
+
+Daarnaast werd vastgesteld dat bepaalde indicatoren in hun oorspronkelijke formulering niet
+\textbf{relevant} bleken of geen variatie vertoonden in de antwoorden, waardoor zij weinig
+onderscheidende waarde hadden. Zo bleek de vraag over de aanwezigheid van een chauffeur
+voor wachtdiensten steeds hetzelfde antwoord op te leveren, en werd de werkdrukschaal in
+zijn oorspronkelijke vorm als voor interpretatie vatbaar beschouwd en vervangen door vier
+nieuwe gevalideerde subschalen \autocite{Merckx2023}.\\
+
+Het rapport formuleert hierover een expliciete aanbeveling: de belasting bij het werkveld moet
+geminimaliseerd worden via strategieën zoals een doordachte selectie van indicatoren, reliëf
+in de bevragingsfrequentie en slimme automatisering, zoals het automatisch invullen van
+velden op basis van bestaande databronnen (IMA, mutualiteiten) \autocite{Merckx2023}. Deze
+aanbeveling vormt een directe aanleiding voor het onderzoek in deze bachelorproef.
+
+\subsection{Doelgroep}
+\label{subsec:doelgroep}
+
+De primaire doelgroep van deze bachelorproef bestaat uit \textbf{huisartsen en
+praktijkmedewerkers} werkzaam binnen Eerstelijnszone Aalst. Binnen de Vlaamse
+eerstelijnszorg zijn grote verschillen zichtbaar in praktijkwerking, schaalgrootte en digitale
+maturiteit: sommige praktijken werken volledig solo, andere zijn uitgegroeid tot grote
+groepspraktijken met verpleegkundigen, administratief personeel en telefonische
+secretariaatsdiensten \autocite{Rampelberg2025a}. Deze diversiteit maakt het bijzonder
+uitdagend om een uniforme evaluatietool te ontwerpen die voor alle praktijkvormen even
+bruikbaar is.\\
+
+Huisartsen beschikken over zeer beperkte tijd buiten de consultaties voor administratieve
+taken. Elke bijkomende belasting, zoals het invullen van een uitgebreide vragenlijst, concurreert
+rechtstreeks met patiëntenzorg \autocite{Merckx2023}. Praktijkmedewerkers, zoals
+verpleegkundigen of administratief personeel, worden soms ingezet voor het invullen van de
+praktijkvragenlijst, maar ook zij beschikken over beperkte beschikbaarheid en hebben vaak
+geen gespecialiseerde kennis van alle gevraagde indicatoren.\\
+
+De effectiviteitsladder die werd opgesteld binnen het project van Eerstelijnszone Aalst
+illustreert dat de noden en mogelijkheden sterk verschillen naargelang de praktijkvorm: een
+solopraktijk die overweegt een verpleegkundige aan te werven heeft andere evaluatienoden
+dan een groepspraktijk die haar online agendabeheer wil optimaliseren \autocite{Rampelberg2025a}.
+Een digitale interface moet dan ook flexibel genoeg zijn om met deze variatie om te gaan.
+
+\subsection{Doel van de bachelorproef}
+\label{subsec:doel-bp}
+
+Het doel van deze bachelorproef kadert expliciet binnen de aanbevelingen uit het rapport
+Toegankelijkheid Huisartsgeneeskunde en de noden die geïdentificeerd werden binnen
+Eerstelijnszone Aalst. Er bestaat momenteel geen gevalideerd digitaal hulpmiddel dat
+specifiek afgestemd is op de toegankelijkheidsevaluaties van Vlaamse
+huisartsenpraktijken \autocite{Merckx2023}. Deze bachelorproef wil hierop een antwoord
+bieden door een proof-of-concept interface te ontwikkelen die de bestaande indicatorenset
+omzet in een gebruiksvriendelijke, interactieve bevraging.\\
+
+De interface beoogt drie concrete verbeteringen ten opzichte van de huidige papieren of
+digitale vragenlijsten: een kortere invultijd, een hogere consistentie in de interpretatie van
+indicatoren, en een lagere cognitieve belasting voor de gebruiker \autocite{Merckx2023}.
+Daarmee sluit het onderzoek aan bij de bredere beleidsdoelstelling om de frequentie en
+kwaliteit van toegankelijkheidsevaluaties in Vlaamse huisartsenpraktijken structureel te
+verhogen.
+
+\section{Technologisch onderzoek}
+\label{sec:technologisch-onderzoek}
+
+\subsection{Bestaande survey-tools}
+\label{subsec:survey-tools}
+
+Voor de ontwikkeling van de proof-of-concept interface is het relevant om eerst het bestaande
+landschap van digitale survey-tools te verkennen. Verschillende platformen bieden
+out-of-the-box functionaliteit voor het afnemen van vragenlijsten, elk met eigen sterktes en
+beperkingen in de context van een toegankelijkheidsevaluatie voor huisartsenpraktijken.\\
+
+\textbf{Microsoft Forms} is een laagdrempelig en breed verspreid platform dat sterk geïntegreerd
+is in de Microsoft 365-omgeving. Het biedt basisondersteuning voor meerdere vraagformats, conditionele logica en automatische
+rapportage via Power BI. De drempel voor eindgebruikers is laag, maar de aanpassingsmogelijkheden zijn beperkt: visuele ondersteuning, automatische feedback per indicator en
+aangepaste navigatielogica zijn niet of slechts beperkt realiseerbaar.\\
+
+\textbf{REDCap} (Research Electronic Data Capture) is een veilig, webgebaseerd softwareplatform dat is ontworpen om gegevensverzameling voor onderzoek te ondersteunen.
+Het biedt een intuïtieve interface voor gevalideerde gegevensverzameling, 
+audittrails voor het volgen van gegevensmanipulatie en exportprocedures, 
+geautomatiseerde exportprocedures voor naadloze gegevensdownloads naar gangbare statistische pakketten en procedures voor gegevensintegratie en interoperabiliteit met externe bronnen \autocite{Harris2009}.\\
+
+\textbf{SurvaySparrow} is een online enquête- en feedbackplatform waarmee organisaties eenvoudig enquêtes kunnen opstellen, verspreiden en analyseren.
+Het platform onderscheidt zich door zijn conversatiestijl, waarbij enquêtes worden gepresenteerd in een vorm die voor respondenten natuurlijker en interactiever aanvoelt.
+Enquêtes kunnen via verschillende kanalen worden gedeeld, zoals e-mail, websites en sociale media, en kunnen bovendien worden geautomatiseerd voor terugkerende feedbackmomenten.
+Daarnaast biedt SurveySparrow uitgebreide rapportages en realtime dashboards, zodat resultaten overzichtelijk worden weergegeven en direct inzicht geven.
+Door integraties met onder andere CRM- en HR-systemen is het platform breed inzetbaar, bijvoorbeeld voor klanttevredenheidsonderzoeken, medewerkerstevredenheid en marktonderzoek.\\
+
+\subsection{Fitgap-analyse van de bestaande tools}
+\label{subsec:fitgap}
+
+Een fitgap-analyse vergelijkt de functionele vereisten van de beoogde interface met wat de
+bestaande tools kunnen bieden. Op basis van de noden die geïdentificeerd werden in de
+literatuur en de gesprekken met huisartsen binnen Eerstelijnszone Aalst kunnen de volgende
+vereisten worden geformuleerd \autocite{Merckx2023}:
+
+\begin{enumerate}
+  \item \textbf{Dynamische vragen}: is er mogenlijkheid voor een vragenlijst die verandert afhangend van voorgaande antwoorden?
+  \item \textbf{distributie mogelijkheden}: kan de tool geïntigreerd worden in een applicatie via embedding, een api of webhooks?
+  \item \textbf{Automatische invulling}: kunnen vragen automatisch worden ingevuld in de form met gekende data?
+  \item \textbf{Prijzen}: wat kost het gebruiken van de tool?
+\end{enumerate}
+
+\subsubsection{Microsoft Forms}
+\label{subsubsec:MicrosoftForms}
+
+\textbf{Dynamische vragen}: Beperkte mogelijkheid. 
+Je kan "branching logic" instellen waardoor respondenten naar een andere sectie worden doorgestuurd op basis van een antwoord, 
+maar de opties zijn vrij eenvoudig.\\
+\textbf{Distributie}: Geen officiële embedding via API of webhooks. 
+Formulieren kunnen gedeeld worden via link, QR-code of ingebed als iframe in een webpagina. 
+Integratie met andere tools verloopt via Power Automate (niet via native webhooks/API).\\
+\textbf{Automatische invulling}: Niet standaard ondersteund. 
+Wel mogelijk om bepaalde velden voor te invullen via aangepaste URL-parameters, 
+maar dit is beperkt en niet officieel gedocumenteerd.\\
+\textbf{Prijzen}: Gratis inbegrepen bij Microsoft 365. 
+Standalone gratis versie beschikbaar met beperkingen (max. 100 antwoorden per formulier).
+
+\subsubsection{REDCap}
+\label{subsubsec:REDCap}
+
+\textbf{Dynamische vragen}:  Uitstekend. 
+REDCap heeft krachtige "branching logic" en "piping" waarmee vragen volledig dynamisch worden op basis van eerdere antwoorden.\\
+\textbf{Distributie}: Sterke mogelijkheden. 
+Beschikt over een API, kan ingebed worden in externe applicaties, en ondersteunt geautomatiseerde workflows. 
+Geen native webhooks, maar API-integraties zijn uitgebreid.\\
+\textbf{Automatische invulling}: Ja. Via de API kunnen gekende data automatisch in formulieren geladen worden. 
+Ook "pre-filling" via unieke links is mogelijk.\\
+\textbf{Prijzen}: Gratis voor non-profit en academische instellingen via een consortiumlicentie. 
+Commercieel gebruik vereist een betalende licentie (prijs varieert per instelling/organisatie).
+
+\subsubsection{SurvaySparrow}
+\label{subsubsec:SurvaySparrow}
+
+\textbf{Dynamische vragen}: Ja. 
+Uitgebreide conditionele logica waarmee de vragenlijst volledig aanpast op basis van eerdere antwoorden. 
+Ondersteunt ook "skip logic" en gepersonaliseerde flows.\\
+\textbf{Distributie}: Uitstekend. 
+Biedt embedding (iframe & SDK), een REST API en webhooks aan. 
+Goed geschikt voor integratie in externe applicaties.\\
+\textbf{Automatische invulling}: Ja. 
+Via API of URL-parameters kunnen gekende data vooraf ingevuld worden in formulieren ("pre-fill" functionaliteit).\\
+\textbf{Prijzen}: Betalend, met een gratis proefperiode. 
+Plannen starten vanaf ongeveer €19/maand (Basic) tot €149+/maand (Business), afhankelijk van het aantal antwoorden en functies. 
+Enterprise op aanvraag.
+
+\subsubsection{Samenvatting}
+\label{subsubsec:Samenvatting}
+
+\begin{table}[h]
   \centering
-  \includegraphics[width=0.8\textwidth]{grail.jpg}
-  \caption[Voorbeeld figuur.]{\label{fig:grail}Voorbeeld van invoegen van een figuur. Zorg altijd voor een uitgebreid bijschrift dat de figuur volledig beschrijft zonder in de tekst te moeten gaan zoeken. Vergeet ook je bronvermelding niet!}
-\end{figure}
-
-\begin{listing}
-  \begin{minted}{python}
-    import pandas as pd
-    import seaborn as sns
-
-    penguins = sns.load_dataset('penguins')
-    sns.relplot(data=penguins, x="flipper_length_mm", y="bill_length_mm", hue="species")
-  \end{minted}
-  \caption[Voorbeeld codefragment]{Voorbeeld van het invoegen van een codefragment.}
-\end{listing}
-
-\lipsum[7-20]
-
-\begin{table}
-  \centering
-  \begin{tabular}{lcr}
-    \toprule
-    \textbf{Kolom 1} & \textbf{Kolom 2} & \textbf{Kolom 3} \\
-    $\alpha$         & $\beta$          & $\gamma$         \\
-    \midrule
-    A                & 10.230           & a                \\
-    B                & 45.678           & b                \\
-    C                & 99.987           & c                \\
-    \bottomrule
+  \begin{tabular}{|l|l|l|l|}
+    \hline
+    \textbf{Criterium} & \textbf{Microsoft Forms} & \textbf{REDCap} & \textbf{SurveySparrow} \\
+    \hline
+    Dynamische vragen & Beperkt & Uitstekend & Uitstekend \\
+    \hline
+    Distributie/API & Beperkt & Goed & Uitstekend \\
+    \hline
+    Auto-invulling & Beperkt & Ja & Ja \\
+    \hline
+    Prijs & Gratis (M365) & Gratis (non-profit) & Betaald \\
+    \hline
   \end{tabular}
-  \caption[Voorbeeld tabel]{\label{tab:example}Voorbeeld van een tabel.}
+  \label{tab:fit-analyse}
 \end{table}
 
+\subsection{Framework}
+\label{subsec:framework}
+
+Voor de ontwikkeling van de proof-of-concept interface wordt gekozen voor \textbf{Angular},
+een open-source frontend-framework ontwikkeld en onderhouden door Google. Deze keuze is
+om meerdere redenen gemotiveerd.\\
+
+Ten eerste biedt Angular een duidelijke en gestructureerde architectuur op basis van
+componenten, modules en services, wat de onderhoudbaarheid en uitbreidbaarheid van de
+codebase ten goede komt. Ten tweede beschikt Angular over sterke ingebouwde
+ondersteuning voor formulieren en validatiemechanismen via zowel template-driven als
+reactive forms, wat bijzonder relevant is voor het ontwikkelen van interactieve vragenlijsten
+met conditionele logica. Ten derde laat de bestaande voorkennis en praktijkervaring met het
+framework toe om de ontwikkeltijd te beperken en de focus te leggen op het onderzoeksdoel,
+met name het ontwerpen en evalueren van een gebruiksvriendelijke interface.\\
+
+Angular maakt gebruik van TypeScript, wat zorgt voor sterkere typering en vroegere
+foutdetectie in vergelijking met puur JavaScript. De Angular CLI faciliteert de opzet en het
+beheer van het project, inclusief het genereren van componenten, services en testbestanden.
+
+\section{Onderzoek en succescriteria}
+\label{sec:succescriteria}
+
+\subsection{De System Usability Scale (SUS)}
+\label{subsec:sus}
+
+De System Usability Scale (SUS) is een gestandaardiseerde vragenlijst voor het meten van
+de subjectief ervaren gebruiksvriendelijkheid van een systeem of interface. De schaal werd
+ontwikkeld door John Brooke in 1986 en bestaat uit tien stellingen die de gebruiker beoordeelt
+op een vijfpunts Likert-schaal. De berekende SUS-score situeert zich tussen 0 en 100 en laat
+toe de interface te positioneren ten opzichte van internationale usabilitynormen.\\
+
+Een SUS-score van 68 wordt beschouwd als het gemiddelde van commerciële systemen. Scores
+boven 75 worden internationaal als \textit{good usability} beschouwd, terwijl scores boven 85
+als \textit{excellent} worden aangemerkt. De SUS heeft het voordeel
+dat het een kleine steekproef vereist (5 tot 10 gebruikers volstaan voor betrouwbare
+resultaten), wat haalbaar is binnen de context van dit onderzoek.\\
+
+In het kader van deze bachelorproef wordt een SUS-score van minimaal 75 als succescriterium
+gehanteerd. Dit impliceert dat de interface door huisartsen en praktijkmedewerkers als
+duidelijk gebruiksvriendelijker wordt beoordeeld dan de klassieke vragenlijst, die op basis van
+de literatuur als complex en tijdrovend wordt ervaren \autocite{Merckx2023}.
+
+\subsection{Heatmap-analyse}
+\label{subsec:heatmap}
+
+Naast de SUS-vragenlijst wordt de interactie van gebruikers met de interface gemonitord via
+heatmaps en klikgegevens. Voor dit doel wordt gebruikgemaakt van tools zoals
+\textbf{Microsoft Clarity} of \textbf{Hotjar}. Deze tools registreren automatisch het klikgedrag,
+scrollgedrag en time-on-task van gebruikers, zonder dat hiervoor aanvullende
+logging-infrastructuur moet worden opgezet.\\
+
+Heatmaps visualiseren welke zones van de interface de meeste aandacht trekken en waar
+gebruikers onverwacht gedrag vertonen, zoals herhaalde klikken op een niet-klikbaar element
+(rage clicks) of het verlaten van een pagina zonder de sectie te voltooien. Dergelijke patronen
+zijn een indicator voor verwarring of cognitieve belasting op specifieke plaatsen in de
+interface.\\
+
+Een succesvolle interface wordt gekenmerkt door een vloeiend navigatiepatroon zonder
+significante zones van verwarring, en door een time-on-task die merkbaar lager ligt dan bij de
+klassieke vragenlijst. De heatmapdata worden gebruikt als aanvulling op de kwantitatieve
+tijdsmetingen en de kwalitatieve think-aloud-observaties.
+
+\subsection{Ideale lengte van een survey}
+\label{subsec:survey-lengte}
+
+Een belangrijk inzicht uit de usability-literatuur is dat de lengte van een vragenlijst een
+directe invloed heeft op de voltooiingsgraad, de kwaliteit van de antwoorden en de
+cognitieve belasting van de invuller \autocite{Kost2018}. Langere surveys leiden tot
+survey fatigue, waarbij respondenten minder aandachtig antwoorden of de vragenlijst
+voortijdig verlaten.\\
+
+Het rapport Toegankelijkheid Huisartsgeneeskunde erkent dit expliciet als een knelpunt:
+de uiteindelijke indicatorenset (set 4.0, 38 indicatoren) is al het resultaat van meerdere
+reductiestappen om de belasting te minimaliseren, maar de praktijk toont aan dat zelfs deze
+gereduceerde set nog als te omvangrijk wordt ervaren \autocite{Merckx2023}. De aanbeveling
+is dan ook om de bevraging te structureren in modules, zodat een praktijk niet in één sessie
+alles hoeft in te vullen, en om automatische invulling van velden te voorzien op basis van
+bestaande databronnen.\\
+
+Voor de proof-of-concept interface wordt daarom gekozen voor een modulaire opbouw en
+een gefaseerde presentatie van vragen. Elke module bevat een beperkt aantal indicatoren die
+thematisch samenhangen. Een voortgangsindicator toont de gebruiker hoever hij of zij staat,
+wat de motivatie om door te gaan verhoogt. Internationaal onderzoek suggereert dat een
+survey die in tien tot maximaal 20 minuten kan worden ingevuld de beste resultaten heeft \autocite{Revilla2017}.
+
+\subsection{Criteria voor een geslaagd onderzoek}
+\label{subsec:slagen-onderzoek}
+
+De bachelorproef wordt als succesvol beschouwd wanneer aan de volgende criteria is voldaan.
+Ten eerste dient de invultijd van de vragenlijst tussen de tien tot maximaal twintig minuten, gemeten via tijdsmetingen bij een groep van een tiental huisartsen en praktijkmedewerkers. 
+Ten tweede dient de SUS-score van de interface boven de drempel van 75 te liggen, 
+wat internationaal geldt als \textit{good usability}.\\
+
+Aanvullend worden de heatmapdata en de think-aloud-observaties gebruikt om specifieke
+knelpunten in de interface te identificeren en te verklaren waarom bepaalde ontwerpkeuzes al
+dan niet bijdragen aan de beoogde verbeteringen.
