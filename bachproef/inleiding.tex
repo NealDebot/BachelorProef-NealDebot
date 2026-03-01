@@ -5,32 +5,101 @@
 \chapter{\IfLanguageName{dutch}{Inleiding}{Introduction}}%
 \label{ch:inleiding}
 
-De inleiding moet de lezer net genoeg informatie verschaffen om het onderwerp te begrijpen en in te zien waarom de onderzoeksvraag de moeite waard is om te onderzoeken. In de inleiding ga je literatuurverwijzingen beperken, zodat de tekst vlot leesbaar blijft. Je kan de inleiding verder onderverdelen in secties als dit de tekst verduidelijkt. Zaken die aan bod kunnen komen in de inleiding~\autocite{Pollefliet2011}:
+% De inleiding moet de lezer net genoeg informatie verschaffen om het onderwerp te begrijpen en in te zien waarom de onderzoeksvraag de moeite waard is om te onderzoeken. In de inleiding ga je literatuurverwijzingen beperken, zodat de tekst vlot leesbaar blijft. Je kan de inleiding verder onderverdelen in secties als dit de tekst verduidelijkt. Zaken die aan bod kunnen komen in de inleiding~\autocite{Pollefliet2011}:
 
-\begin{itemize}
-  \item context, achtergrond
-  \item afbakenen van het onderwerp
-  \item verantwoording van het onderwerp, methodologie
-  \item probleemstelling
-  \item onderzoeksdoelstelling
-  \item onderzoeksvraag
-  \item \ldots
-\end{itemize}
+% \begin{itemize}
+%   \item context, achtergrond
+%   \item afbakenen van het onderwerp
+%   \item verantwoording van het onderwerp, methodologie
+%   \item probleemstelling
+%   \item onderzoeksdoelstelling
+%   \item onderzoeksvraag
+%   \item \ldots
+% \end{itemize}
+
+De toegankelijkheid van huisartsenpraktijken vormt een groeiende uitdaging binnen de Vlaamse
+eerstelijnszorg. Huisartsen worden vandaag geconfronteerd met een stijgende werkdruk,
+toenemende administratieve lasten en een dalende instroom van nieuwe artsen in de huisartsopleiding \autocite{Rampelberg2025a}.
+Om de situatie in kaart te brengen en gericht bij te sturen, maken zorgorganisaties zoals Domus Medica,
+UGent en eerstelijnszones gebruik van uitgebreide indicatorensets en bevragingen. In de praktijk
+worden deze evaluaties echter vaak als tijdrovend, onduidelijk en moeilijk hanteerbaar ervaren,
+wat ertoe leidt dat huisartsen ze minder frequent of inconsistent invullen \autocite{Merckx2023}. Dit belemmert niet alleen
+de kwaliteit van de dataverzameling, maar ook de mogelijkheid tot structurele beleidsverbetering.
+Deze bachelorproef vertrekt vanuit deze concrete nood en onderzoekt in welke mate een digitale
+proof-of-concept interface de toegankelijkheidsevaluatie voor huisartsen kan vereenvoudigen.
 
 \section{\IfLanguageName{dutch}{Probleemstelling}{Problem Statement}}%
 \label{sec:probleemstelling}
 
-Uit je probleemstelling moet duidelijk zijn dat je onderzoek een meerwaarde heeft voor een concrete doelgroep. De doelgroep moet goed gedefinieerd en afgelijnd zijn. Doelgroepen als ``bedrijven,'' ``KMO's'', systeembeheerders, enz.~zijn nog te vaag. Als je een lijstje kan maken van de personen/organisaties die een meerwaarde zullen vinden in deze bachelorproef (dit is eigenlijk je steekproefkader), dan is dat een indicatie dat de doelgroep goed gedefinieerd is. Dit kan een enkel bedrijf zijn of zelfs één persoon (je co-promotor/opdrachtgever).
+% Uit je probleemstelling moet duidelijk zijn dat je onderzoek een meerwaarde heeft voor een concrete doelgroep. De doelgroep moet goed gedefinieerd en afgelijnd zijn. Doelgroepen als ``bedrijven,'' ``KMO's'', systeembeheerders, enz.~zijn nog te vaag. Als je een lijstje kan maken van de personen/organisaties die een meerwaarde zullen vinden in deze bachelorproef (dit is eigenlijk je steekproefkader), dan is dat een indicatie dat de doelgroep goed gedefinieerd is. Dit kan een enkel bedrijf zijn of zelfs één persoon (je co-promotor/opdrachtgever).
+Toegankelijkheid van gezondheidszorg is een fundamenteel recht voor elke burger. In Vlaanderen
+heeft de overheid de taak om deze toegankelijkheid te organiseren en te bewaken, waarbij de
+huisarts als centrale toegangspoort tot de gezondheidszorg een sleutelrol vervult. Toch daalt
+de toegankelijkheid van huisartsenpraktijken al jaren gestaag. Een vergrijzende artsenpopulatie,
+een lage instroom in de huisartsopleiding, een hoge zorgvraag bij patiënten en een groeiende
+administratieve last zorgen voor een structurele druk op het systeem \autocite{Rampelberg2025}.
+
+Om deze problematiek te monitoren en aan te pakken, werden door organisaties zoals Domus Medica
+en UGent indicatorensets en vragenlijsten ontwikkeld die huisartsen en praktijkmedewerkers
+toelaten de toegankelijkheid van hun praktijk systematisch te evalueren \autocite{Merckx2023}. Uit pilootstudies en
+gesprekken met huisartsen binnen Eerstelijnszone Aalst blijkt echter dat deze evaluatie-instrumenten
+in de praktijk ernstige tekortkomingen vertonen. Huisartsen geven aan dat de bestaande vragenlijsten
+te lang en te complex zijn om naast de consultaties in te vullen. Bovendien laten de criteria ruimte
+voor uiteenlopende interpretaties, waardoor de betrouwbaarheid en vergelijkbaarheid van de
+verzamelde data sterk vermindert \autocite{Rampelberg2025a}. Bijgevolg worden de evaluaties slechts sporadisch en inconsistent
+uitgevoerd, wat de bruikbaarheid voor beleidsvorming ernstig beperkt.
+
+Er bestaat momenteel geen gevalideerd digitaal hulpmiddel dat specifiek afgestemd is op de
+toegankelijkheidsevaluaties van Vlaamse huisartsenpraktijken. De combinatie van tijdsdruk,
+interpretatieproblemen en het gebrek aan een gebruiksvriendelijke tool vormt dan ook de kern
+van het probleem dat deze bachelorproef wil aanpakken.
+
 
 \section{\IfLanguageName{dutch}{Onderzoeksvraag}{Research question}}%
 \label{sec:onderzoeksvraag}
 
-Wees zo concreet mogelijk bij het formuleren van je onderzoeksvraag. Een onderzoeksvraag is trouwens iets waar nog niemand op dit moment een antwoord heeft (voor zover je kan nagaan). Het opzoeken van bestaande informatie (bv. ``welke tools bestaan er voor deze toepassing?'') is dus geen onderzoeksvraag. Je kan de onderzoeksvraag verder specifiëren in deelvragen. Bv.~als je onderzoek gaat over performantiemetingen, dan 
+% Wees zo concreet mogelijk bij het formuleren van je onderzoeksvraag. Een onderzoeksvraag is trouwens iets waar nog niemand op dit moment een antwoord heeft (voor zover je kan nagaan). Het opzoeken van bestaande informatie (bv. ``welke tools bestaan er voor deze toepassing?'') is dus geen onderzoeksvraag. Je kan de onderzoeksvraag verder specifiëren in deelvragen. Bv.~als je onderzoek gaat over performantiemetingen, dan 
+
+De centrale onderzoeksvraag van dit onderzoek luidt:
+
+\begin{quote}
+  \textit{In welke mate kan een tested proof-of-concept interface bestaande
+  toegankelijkheidsevaluaties voor huisartsen en praktijkmedewerkers sneller, consistenter
+  en gebruiksvriendelijker maken dan de huidige vragenlijsten?}
+\end{quote}
+
+Om deze hoofdvraag concreet en onderbouwd te beantwoorden, worden twee aanvullende deelvragen
+geformuleerd. Ten eerste wordt nagegaan in welke mate de interface bijdraagt aan een meer
+consistente interpretatie en beantwoording van toegankelijkheidsindicatoren door huisartsen.
+Ten tweede wordt onderzocht in welke mate de interface de cognitieve belasting vermindert tijdens
+het uitvoeren van een toegankelijkheidsevaluatie in vergelijking met een klassieke vragenlijst.
+Samen maken deze deelvragen het mogelijk om niet alleen vast te stellen óf de interface een
+verbetering vormt, maar ook waaróm en op welke manier zij effectiever is dan de huidige aanpak.
 
 \section{\IfLanguageName{dutch}{Onderzoeksdoelstelling}{Research objective}}%
 \label{sec:onderzoeksdoelstelling}
 
-Wat is het beoogde resultaat van je bachelorproef? Wat zijn de criteria voor succes? Beschrijf die zo concreet mogelijk. Gaat het bv.\ om een proof-of-concept, een prototype, een verslag met aanbevelingen, een vergelijkende studie, enz.
+% Wat is het beoogde resultaat van je bachelorproef? Wat zijn de criteria voor succes? Beschrijf die zo concreet mogelijk. Gaat het bv.\ om een proof-of-concept, een prototype, een verslag met aanbevelingen, een vergelijkende studie, enz.
+
+Het doel van dit toegepaste onderzoek is tweeledig. Enerzijds wordt onderzocht welke elementen
+van de huidige evaluatie-instrumenten het meeste tijdverlies, verwarring of inconsistentie
+veroorzaken bij huisartsen en praktijkmedewerkers. Anderzijds wordt op basis van deze inzichten
+een proof-of-concept digitale interface ontworpen en empirisch geëvalueerd.
+
+Het beoogde eindresultaat is een werkend prototype dat de toegankelijkheidsevaluatie structureert,
+visueel ondersteunt en efficiënter maakt, aangevuld met een analyse van de gebruikservaring. De
+bachelorproef kan als succesvol beschouwd worden wanneer de interface aantoont dat zij de invultijd
+reduceert, de gebruiksvriendelijkheid verhoogt en het evaluatieproces voor huisartsen en
+praktijkmedewerkers daadwerkelijk vereenvoudigt. Daartoe wordt een combinatie van kwantitatieve
+en kwalitatieve evaluatiemethoden ingezet: tijdsmetingen, de System Usability Scale (SUS),
+de think-aloud-methode en heatmap-analyses via tools zoals Microsoft Clarity.
+
+Hoewel toegankelijkheid een breed en multidimensionaal begrip is, focust deze bachelorproef
+bewust op een afgebakende selectie van toegankelijkheidsindicatoren, namelijk die indicatoren
+die op basis van literatuur en verkennende interviews het vaakst als tijdrovend, moeilijk
+interpreteerbaar of inconsistent worden ervaren. Door deze afbakening kan de effectiviteit van
+de proof-of-concept interface op een haalbare en diepgaande manier worden onderzocht binnen
+de context van Eerstelijnszone Aalst.
 
 \section{\IfLanguageName{dutch}{Opzet van deze bachelorproef}{Structure of this bachelor thesis}}%
 \label{sec:opzet-bachelorproef}
