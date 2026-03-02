@@ -26,5 +26,48 @@
 %% Maak voor elke fase (behalve het literatuuronderzoek) een NIEUW HOOFDSTUK aan
 %% en geef het een gepaste titel.
 
-\lipsum[21-25]
+Dit onderzoek volgt een Proof-of-Concept-aanpak, een veelgebruikte onderzoeksbenadering binnen toegepaste informatica waarbij een concreet prototype wordt ontwikkeld en geëvalueerd in functie van een reële praktijksituatie.
+De centrale vraag is in welke mate een interactieve interface huisartsen en praktijkmedewerkers kan helpen om toegankelijkheidsevaluaties sneller, consistenter en gebruiksvriendelijker uit te voeren.
+Om deze vraag te beantwoorden wordt het onderzoek opgedeeld in vier opeenvolgende fasen: een exploratief onderzoek, de ontwikkeling van de interface, een empirische evaluatie en ten slotte de analyse en rapportering van de resultaten.
+\subsection{Fase 1}
+\label{ter:Fase 1}
+De eerste fase bestaat uit een exploratieve analyse, waarin de noden en pijnpunten van huisartsen en huisartsenpraktijken in kaart worden gebracht.
+Dit gebeurt via semigestructureerde interviews met een tiental huisartsen of praktijkmedewerkers binnen Eerstelijnszone Aalst.
+De keuze voor interviews is bewust: huisartsen en praktijkmedewerkers kunnen tijdens deze gesprekken concreet aangeven welke onderdelen van bestaande toegankelijkheidsbevragingen (zoals de indicatorensets van Domus Medica en UGent) \autocite{Merckx2023} als verwarrend, tijdrovend of inefficiënt worden ervaren.
+Deze informatie wordt kwalitatief geanalyseerd via thematische codering en vormt de basis voor een set functionele vereisten die de ontwikkeling van de interface sturen.
+Tijdens de exploratieve fase wordt geen volledig toegankelijkheidskader gebruikt, maar een gerichte selectie van indicatoren.
+Deze selectie gebeurt op basis van een combinatie van literatuuronderzoek en semigestructureerde interviews met huisartsen binnen Eerstelijnszone Aalst.
+Enkel de indicatoren die door meerdere bronnen als problematisch worden aangeduid, worden opgenomen in het proof of concept.
+Naast de interviews wordt een analyse uitgevoerd van bestaande evaluatie-instrumenten, zodat de structuur en inhoud van huidige vragenlijsten correct geïnterpreteerd kunnen worden.
+De output van deze fase is een gedetailleerd requirementsdocument dat duidelijk beschrijft welke functies, interactiemechanismen en visuele elementen noodzakelijk zijn om huisartsen optimaal te ondersteunen.
+\subsection{Fase 2}
+\label{ter:Fase 2}
+In de tweede fase wordt op basis van deze inzichten een proof of concept interface ontwikkeld.
+Dit prototype wordt gerealiseerd met moderne webtechnologieën, waarbij een frontend in Anguler wordt gecombineerd met een eenvoudige backend.
+Voor de ontwikkeling van de proof of concept interface wordt bewust gekozen voor Angular.
+Deze keuze is gemotiveerd door bestaande voorkennis en praktijkervaring met dit framework.
+Deze ervaring laat toe om de ontwikkeltijd te beperken en de focus te leggen op het onderzoeksdoel, met name het ontwerpen en evalueren van een gebruiksvriendelijke interface, eerder dan op het aanleren van een nieuw framework.
+Daarnaast biedt Angular een duidelijke structuur en sterke ondersteuning voor form-based applicaties,
+wat bijzonder relevant is voor het ontwikkelen van interactieve vragenlijsten en validatiemechanismen.\\\\
 
+Voor de gegevensopslag wordt gebruikgemaakt van mockdatabases, zoals JSON-bestanden of een SQLite-database, aangezien de focus van het onderzoek ligt op functionaliteit en gebruikerservaring, niet op een productieklare implementatie.
+Het ontwerp van de interface gebeurt iteratief: na de ontwikkeling van vroege prototypes worden deze getest met een tiental gebruikers (bijvoorbeeld huisartsen of praktijkmedewerkers) om snelle feedback te verzamelen.
+De interface bevat onder meer een gestroomlijnde vragenstructuur, duidelijke visuele hulpmiddelen, een voortgangsindicator en automatische feedbackmodules.
+Deze fase resulteert in een volledig werkend prototype met bijhorende technische documentatie.
+\subsection{Fase 3}
+\label{ter:Fase 3}
+De derde fase omvat de empirische evaluatie, waarin systematisch wordt onderzocht in welke mate de interface het evaluatieproces daadwerkelijk verbetert.
+Hierbij worden een tiental huisartsen en praktijkmedewerkers betrokken.
+Om objectieve, meetbare resultaten te bekomen, wordt een combinatie van kwantitatieve en kwalitatieve technieken gebruikt.
+Ten eerste wordt onderzocht of de interface het proces sneller maakt: elke deelnemer doorloopt zowel een klassieke toegankelijkheidsvragenlijst als het digitale prototype, waarbij de invultijd nauwkeurig wordt geregistreerd.
+Vervolgens wordt de gebruiksvriendelijkheid beoordeeld via de bekende System Usability Scale (SUS), een gestandaardiseerde methode die toelaat de interface te situeren ten opzichte van internationaal erkende usabilitynormen.
+Daarnaast wordt de think-aloud-methode toegepast: tijdens het invullen spreekt de gebruiker zijn gedachten uit, wat waardevolle inzichten oplevert over interpretatieproblemen, verwarring en cognitieve belasting.
+De interactie met de interface wordt verder gemonitord via heatmaps en klikgegevens, verzameld met tools zoals Microsoft Clarity of Hotjar.
+Deze registreren onder meer klikgedrag, scrollgedrag, zones van verwarring (zoals rage clicks) en time-on-task.
+Tot slot wordt een consistency-check uitgevoerd: dezelfde indicatoren worden via de klassieke vragenlijst en de interface afgenomen, zodat kan worden nagegaan of het prototype leidt tot minder variatie of foutieve interpretaties.
+\subsection{Fase 4}
+\label{ter:Fase 4}
+In de vierde fase worden de verzamelde gegevens grondig geanalyseerd en geïnterpreteerd.
+De kwantitatieve data, zoals invultijden, SUS-scores en heatmapstatistieken, worden verwerkt in Excel of Python om verschillen tussen de klassieke methode en de PoC-interface te bepalen.
+De kwalitatieve data uit interviews, think-aloud-sessies en observaties worden thematisch gecodeerd en vergeleken met de bevindingen uit literatuur.
+De combinatie van beide datatypen maakt het mogelijk om een genuanceerd antwoord te geven op de onderzoeksvraag en om te beoordelen welke onderdelen van de interface effectief bijdragen aan efficiëntie en gebruiksvriendelijkheid, en welke nog verdere verfijning vereisen.
