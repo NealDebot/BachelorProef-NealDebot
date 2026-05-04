@@ -1,0 +1,146 @@
+\chapter{\IfLanguageName{dutch}{Implementatie}{Implementation}}%
+\label{ch:implementatie}
+
+In dit hoofdstuk wordt de technische realisatie van het proof-of-concept platform voor het beoordelen van de toegankelijkheid van Vlaamse huisartsenpraktijken uiteengezet. 
+Er wordt dieper ingegaan op de gekozen architectuur, de gebruikte technologieën in zowel de front-end als back-end, de database-structuur en de uiteindelijke deployment van de applicatie.
+
+\section{Systeemarchitectuur}
+\label{sec:systeemarchitectuur}
+
+De applicatie is gebouwd volgens een moderne client-server architectuur, waarbij een strikte scheiding tussen de presentatielaag en de datalaag wordt gehanteerd. 
+Deze ontkoppeling zorgt voor een schaalbare omgeving waarbij de front-end communiceert met de back-end via een RESTful API.
+
+\subsection{Projectstructuur en versiebeheer}
+\label{subsec:projectstructuur}
+
+Voor de ontwikkeling van dit project is gekozen voor een monorepo-strategie. 
+Dit houdt in dat zowel de broncode van de front-end (Angular), de back-end (Express API) als de database-configuraties (Prisma) zijn ondergebracht in één enkele repository op GitHub.
+
+Het gebruik van een monorepo biedt binnen deze bachelorproef enkele significante voordelen:
+\begin{itemize}
+    \item Gedeelde logica en types: TypeScript-interfaces en types kunnen eenvoudiger worden gedeeld tussen de client en de server, wat de consistentie van de data-afhandeling verhoogt.
+    \item Eenvoudig beheer: Met één centrale plek voor versiebeheer wordt het proces van "continuous integration'' en het bijhouden van wijzigingen over de hele stack heen overzichtelijker.
+    \item Transparantie: De volledige codebase is publiek toegankelijk, wat bijdraagt aan de reproduceerbaarheid van het onderzoek.
+\end{itemize}
+
+De volledige applicatie is terug te vinden op GitHub via de volgende link:
+\href{https://github.com/NealDebot/BP-POC-Monorepo}{https://github.com/NealDebot/BP-POC-Monorepo}
+
+\section{Front-end ontwikkeling}
+\label{sec:frontend}
+
+De front-end vormt de interface waarmee de eindgebruikers gaan communiceren. 
+De focus lag hierbij op gebruiksvriendelijkheid, responsiviteit en een efficiënte data-invoer.
+
+\subsection{Angular framework}
+\label{subsec:Angular}
+
+Er is gekozen voor Angular als primair framework. 
+Angular biedt een robuuste, component-gebaseerde structuur die uitermate geschikt is voor het bouwen van complexe Single Page Applications (SPA). 
+Door gebruik te maken van TypeScript wordt de codekwaliteit gewaarborgd middels static typing, wat de onderhoudbaarheid van de bachelorproef op lange termijn ten goede komt.
+
+\subsection{Styling met Tailwind CSS en daisyUI}
+\label{subsec:styling}
+
+Voor de vormgeving is gebruikgemaakt van Tailwind CSS, een utility-first CSS framework. 
+In tegenstelling tot traditionele frameworks biedt Tailwind de vrijheid om UI-elementen snel op te bouwen zonder de HTML-bestanden te verlaten voor uitgebreide CSS-stylesheets. 
+Om de ontwikkeling te versnellen en een consistente visuele taal te garanderen, is daisyUI geïmplementeerd. 
+Deze plugin bovenop Tailwind levert kant-en-klare componenten (zoals buttons, modale vensters en navigatiebalken) die eenvoudig aanpasbaar zijn via thema's.
+
+\subsection{SurveyJS}
+\label{subsec:surveyjs}
+
+Een cruciaal onderdeel van de applicatie is het afnemen van vragenlijsten over praktijktoegankelijkheid. 
+Hiervoor is SurveyJS geïntegreerd. SurveyJS stelt de applicatie in staat om dynamische, JSON-gebaseerde formulieren te renderen. 
+Dit biedt de nodige flexibiliteit om complexe logica (zoals conditionele vragen) toe te passen, wat essentieel is bij het gedetailleerd in kaart brengen van fysieke en digitale drempels in de zorgomgeving.
+
+\section{Back-end ontwikkeling}
+\label{sec:backend}
+
+De back-end fungeert als de centrale logica-hub die verzoeken van de front-end verwerkt, berekeningen uitvoert en communiceert met de database.
+
+\subsection{Express.js}
+\label{subsec:express}
+
+De API is ontwikkeld met Express.js, een minimalistisch webframework voor Node.js. 
+Express is gekozen vanwege de snelheid en de uitgebreide ondersteuning voor middleware, wat cruciaal is voor het afhandelen van HTTP-verzoeken en de beveiliging van de endpoints.
+
+\subsection{Prisma ORM}
+\label{subsec:prisma}
+
+Voor de interactie met de database wordt Prisma gebruikt als Object-Relational Mapper (ORM). 
+Prisma slaat een brug tussen de objectgeoriënteerde wereld van TypeScript en de relationele database. 
+Dankzij de automatische generatie van client-code en migratietools zorgt Prisma voor type-safe database-queries, waardoor runtime-fouten tot een minimum worden beperkt.
+
+\section{Databeheer en Persistentie}
+\label{sec:databeheer}
+
+Het fundament van het platform is de database, waarin alle gegevens met betrekking tot huisartsenpraktijken worden opgeslagen.
+Voor het ontwerp en de implementatie van deze datalaag is een proces gevolgd van conceptueel ontwerp naar technische realisatie.
+
+\subsection{Entity-Relationship Diagram (ERD)}
+\label{subsec:erd}
+
+Om de relaties tussen de verschillende datapunten in kaart te brengen is er gestart met het opstellen van een ERD.
+\begin{center}
+    \includegraphics[width=0.8\textwidth]{Untitled Diagram.drawio.png}
+    \captionof{figure}{Dit is het gebruikte ERD van de applicatie.}
+\end{center}
+
+\subsection{Implementatie met Prisma ORM}
+\label{subsec:prismaorm}
+
+De vertaling van het bovenstaande conceptuele ERD naar de fysieke PostgreSQL database is uitgevoerd met de Prisma ORM.
+Prisma functioneert hierbij als de single source of truth.
+
+In plaats van handmatig SQL-tabellen aan te maken, is de datastructuur gedefinieerd in het schema.prisma bestand binnen de monorepo.
+Dit biedt enkele belangrijke technische voordelen voor dit project:
+
+\begin{itemize}
+    \item Type-safety: Prisma genereert automatisch TypeScript-types op basis van het schema. Dit betekent dat wanneer er in de Express API data uit de database wordt opgevraagd, de compiler precies weet welke velden beschikbaar zijn. Dit voorkomt runtime-errors tijdens de data-afhandeling.
+    \item Declaratieve Migraties: Via Prisma Migrate wordt elke wijziging aan het datamodel bijgehouden in migratiebestanden. Dit zorgt ervoor dat de database-structuur op de lokale ontwikkelomgeving en de productieomgeving altijd identiek is.
+    \item Relatiebeheer: Prisma vereenvoudigt het opvragen van gerelateerde data (bijvoorbeeld: "haal een praktijk op inclusief al zijn eerdere audits'') via een intuïtieve syntax, zonder dat er complexe SQL-joins geschreven hoeven te worden.
+\end{itemize}
+
+\textbf{Voorbeeld van een modeldefinitie in Prisma:}
+
+\begin{center}
+    \includegraphics[width=0.8\textwidth]{Schermafbeelding 2026-05-04 193706.png}
+    \captionof{figure}{Dit is een voorbeeld van een modeldefinitie in prisma.}
+\end{center}
+
+
+\subsection{Databeheer: PostgreSQL}
+\label{subsec:postrgesql}
+
+De persistentie van de data wordt verzorgd door PostgreSQL. 
+Deze relationele database staat bekend om zijn betrouwbaarheid en ondersteuning voor complexe datatypen. 
+De database bevat tabellen voor onder andere gebruikersprofielen, praktijkgegevens en de resultaten van de uitgevoerde toegankelijkheidsscans. 
+Door de relationele structuur kunnen verbanden tussen verschillende evaluatiecriteria efficiënt worden opgeslagen en opgevraagd.
+
+
+
+
+\section{Beveiliging en authenticatie: Auth0}
+\label{sec:auth0}
+
+Gezien de gevoeligheid van data binnen de gezondheidssector is een robuuste beveiliging noodzakelijk. 
+In plaats van een eigen authenticatiesysteem te bouwen, is er gekozen voor Auth0.
+
+Auth0 is zowel in de front-end als de back-end geïmplementeerd:
+
+\begin{itemize}
+    \item Front-end: Beheert de login-flow en beveiligt de routes via guards.
+    \item Back-end: Valideert de JSON Web Tokens (JWT) die door de front-end worden meegestuurd bij API-verzoeken. Hiermee wordt gegarandeerd dat enkel geautoriseerde gebruikers toegang hebben tot specifieke data.
+\end{itemize}
+
+\section{Hosting en Deployment}
+\label{hosting}
+
+Om de applicatie beschikbaar te maken voor evaluatie en gebruik, is een CI/CD-strategie (Continuous Integration / Continuous Deployment) toegepast.
+
+Front-end Hosting (GitHub Pages): De gecompileerde Angular-applicatie is gehost op GitHub Pages. 
+Dit biedt een kostenefficiënte en performante oplossing voor statische bestanden, waarbij updates automatisch worden gepusht zodra de code in de main branch van de GitHub-repository wordt bijgewerkt.
+
+Back-end Hosting (Railway): De Express API en de PostgreSQL-database zijn ondergebracht bij Railway. 
+Railway biedt een naadloze integratie voor Node.js applicaties en beheerde databases, waarbij automatische schaling en eenvoudige monitoring van de serverlogs mogelijk zijn.
