@@ -161,20 +161,10 @@ Een digitale interface moet dan ook flexibel genoeg zijn om met deze variatie om
 \subsection{Doel van de bachelorproef}
 \label{subsec:doel-bp}
 
-Het doel van deze bachelorproef kadert expliciet binnen de aanbevelingen uit het rapport
-Toegankelijkheid Huisartsgeneeskunde en de noden die geïdentificeerd werden binnen
-Eerstelijnszone Aalst. Er bestaat momenteel geen gevalideerd digitaal hulpmiddel dat
-specifiek afgestemd is op de toegankelijkheidsevaluaties van Vlaamse
-huisartsenpraktijken \autocite{Merckx2023}. Deze bachelorproef wil hierop een antwoord
-bieden door een proof-of-concept interface te ontwikkelen die de bestaande indicatorenset
-omzet in een gebruiksvriendelijke, interactieve bevraging.\\
-
-De interface beoogt drie concrete verbeteringen ten opzichte van de huidige papieren of
-digitale vragenlijsten: een kortere invultijd, een hogere consistentie in de interpretatie van
-indicatoren, en een lagere cognitieve belasting voor de gebruiker \autocite{Merckx2023}.
-Daarmee sluit het onderzoek aan bij de bredere beleidsdoelstelling om de frequentie en
-kwaliteit van toegankelijkheidsevaluaties in Vlaamse huisartsenpraktijken structureel te
-verhogen.
+Het doel van deze bachelorproef kadert expliciet binnen de aanbevelingen uit het rapport Toegankelijkheid Huisartsgeneeskunde \autocite{Merckx2023} en de noden die geïdentificeerd werden binnen eerstelijnszone Aalst.
+Er bestaat momenteel geen gevalideerd digitaal hulpmiddel dat specifiek afgestemd is op de toegankelijkheidsevaluaties van vlaamse huisartsen \autocite{Merckx2023}.
+Deze bachelorproef wil hierop een antwoord bieden door een proof-of-concept interface te ontwikkelen die de bestaande indicatorenset omzet in een gebruiksvriendelijke, interactieve bevraging.
+De interface beoogt drie concrete verbeteringen ten opzichte van de huidige vragenlijsten: een kortere invultijd, een hogere consistentie in de interpretatie van indicatoren en een lagere cognitieve belasting voor de gebruiker.
 
 \section{Technologisch onderzoek}
 \label{sec:technologisch-onderzoek}
@@ -203,84 +193,72 @@ Enquêtes kunnen via verschillende kanalen worden gedeeld, zoals e-mail, website
 Daarnaast biedt SurveySparrow uitgebreide rapportages en realtime dashboards, zodat resultaten overzichtelijk worden weergegeven en direct inzicht geven.
 Door integraties met onder andere CRM- en HR-systemen is het platform breed inzetbaar, bijvoorbeeld voor klanttevredenheidsonderzoeken, medewerkerstevredenheid en marktonderzoek.\\
 
-\subsection{Fitgap-analyse van de bestaande tools}
+\textbf{SurveyJS} is een open-source JavaScript-bibliotheek voor het bouwen en weergeven van interactieve vragenlijsten binnen een eigen webapplicatie. 
+Anders dan de bovenstaande platforms is SurveyJS geen zelfstandig enquêteplatform, maar een bibliotheek die wordt geïntegreerd in een bestaande frontend. 
+De bibliotheek biedt uitgebreide ondersteuning voor dynamische vragenlogica, conditionele weergave van vragen en een breed scala aan vraagtypen. 
+Een belangrijk onderscheid met cloudgebaseerde tools is dat SurveyJS volledig client-side draait: alle data worden lokaal verwerkt en opgeslagen, zonder overdracht naar externe servers. 
+SurveyJS biedt officiële integraties voor Angular, React en Vue, wat de technische inbedding in een bestaand frontend-project sterk vereenvoudigt. 
+De bibliotheek is gratis beschikbaar onder een open-source licentie voor niet-commercieel gebruik.
+
+\subsection{Kritische analyse van de bestaande tools in functie van de use case}
 \label{subsec:fitgap}
 
-Een fitgap-analyse vergelijkt de functionele vereisten van de beoogde interface met wat de
-bestaande tools kunnen bieden. Op basis van de noden die geïdentificeerd werden in de
-literatuur en de gesprekken met huisartsen binnen Eerstelijnszone Aalst kunnen de volgende
-vereisten worden geformuleerd \autocite{Merckx2023}:
+Op basis van de noden die geïdentificeerd werden in de literatuur en de gespreken met huisartsen binnen eerstelijnszone Aalst worden vijf functionele vereisten geformuleerd waaraan de ideale tool moet voldoen \autocite{Merckx2023}:
 
 \begin{enumerate}
-  \item \textbf{Dynamische vragen}: is er mogenlijkheid voor een vragenlijst die verandert afhangend van voorgaande antwoorden?
-  \item \textbf{distributie mogelijkheden}: kan de tool geïntigreerd worden in een applicatie via embedding, een api of webhooks?
-  \item \textbf{Automatische invulling}: kunnen vragen automatisch worden ingevuld in de form met gekende data?
-  \item \textbf{Prijzen}: wat kost het gebruiken van de tool?
+  \item \textbf{Dynamische vragen}: de vragenlijst past zich aan op basis van eerder gegeven antwoorden.
+  \item \textbf{distributie mogelijkheden}: de tool kan worden geïntigreerd in een applicatie via embedding, een API of webhooks.
+  \item \textbf{Automatische invulling}: velden kunnen vooraf worden ingevuld op basis van gekende data.
+  \item \textbf{Lokale gegevensopslag}: alle data wordt lokaal opgeslagen, zonder overdracht naar externe servers. Dit is een harde vereiste in de context van de zorg, waar privacygevoelige informatie over huisartsenpraktijken verwerkt wordt.
+  \item \textbf{Prijzen}: de tool is financieel haalbaar voor de beoogde context.
 \end{enumerate}
 
-\subsubsection{Microsoft Forms}
-\label{subsubsec:MicrosoftForms}
-
-\textbf{Dynamische vragen}: Beperkte mogelijkheid. 
-Je kan "branching logic" instellen waardoor respondenten naar een andere sectie worden doorgestuurd op basis van een antwoord, 
-maar de opties zijn vrij eenvoudig.\\
-\textbf{Distributie}: Geen officiële embedding via API of webhooks. 
-Formulieren kunnen gedeeld worden via link, QR-code of ingebed als iframe in een webpagina. 
-Integratie met andere tools verloopt via Power Automate (niet via native webhooks/API).\\
-\textbf{Automatische invulling}: Niet standaard ondersteund. 
-Wel mogelijk om bepaalde velden voor te invullen via aangepaste URL-parameters, 
-maar dit is beperkt en niet officieel gedocumenteerd.\\
-\textbf{Prijzen}: Gratis inbegrepen bij Microsoft 365. 
-Standalone gratis versie beschikbaar met beperkingen (max. 100 antwoorden per formulier).
-
-\subsubsection{REDCap}
-\label{subsubsec:REDCap}
-
-\textbf{Dynamische vragen}:  Uitstekend. 
-REDCap heeft krachtige "branching logic" en "piping" waarmee vragen volledig dynamisch worden op basis van eerdere antwoorden.\\
-\textbf{Distributie}: Sterke mogelijkheden. 
-Beschikt over een API, kan ingebed worden in externe applicaties, en ondersteunt geautomatiseerde workflows. 
-Geen native webhooks, maar API-integraties zijn uitgebreid.\\
-\textbf{Automatische invulling}: Ja. Via de API kunnen gekende data automatisch in formulieren geladen worden. 
-Ook "pre-filling" via unieke links is mogelijk.\\
-\textbf{Prijzen}: Gratis voor non-profit en academische instellingen via een consortiumlicentie. 
-Commercieel gebruik vereist een betalende licentie (prijs varieert per instelling/organisatie).
-
-\subsubsection{SurvaySparrow}
-\label{subsubsec:SurvaySparrow}
-
-\textbf{Dynamische vragen}: Ja. 
-Uitgebreide conditionele logica waarmee de vragenlijst volledig aanpast op basis van eerdere antwoorden. 
-Ondersteunt ook "skip logic" en gepersonaliseerde flows.\\
-\textbf{Distributie}: Uitstekend. 
-Biedt embedding (iframe en SDK), een REST API en webhooks aan. 
-Goed geschikt voor integratie in externe applicaties.\\
-\textbf{Automatische invulling}: Ja. 
-Via API of URL-parameters kunnen gekende data vooraf ingevuld worden in formulieren ("pre-fill" functionaliteit).\\
-\textbf{Prijzen}: Betalend, met een gratis proefperiode. 
-Plannen starten vanaf ongeveer €19/maand (Basic) tot €149+/maand (Business), afhankelijk van het aantal antwoorden en functies. 
-Enterprise op aanvraag.
-
-\subsubsection{Samenvatting}
-\label{subsubsec:Samenvatting}
+Een vergelijkende analyse van de vier tools ten opzichte van deze vereisten levert het volgende beeld op:
 
 \begin{table}[h]
   \centering
-  \begin{tabular}{|l|l|l|l|}
+  \begin{tabularx}{\textwidth}{|X|X|X|X|X|}
     \hline
-    \textbf{Criterium} & \textbf{Microsoft Forms} & \textbf{REDCap} & \textbf{SurveySparrow} \\
+    \textbf{Criterium} & \textbf{Microsoft Forms} & \textbf{REDCap} & \textbf{SurveySparrow} & \textbf{SurveyJS} \\
     \hline
-    Dynamische vragen & Beperkt & Uitstekend & Uitstekend \\
+    Dynamische vragen & Beperkt & Uitstekend & Uitstekend & Uitstekend \\
     \hline
-    Distributie/API & Beperkt & Goed & Uitstekend \\
+    Distributie/API & Beperkt & Goed & Uitstekend & Uitstekend\\
     \hline
-    Auto-invulling & Beperkt & Ja & Ja \\
+    Auto-invulling & Beperkt & Ja & Ja & Ja\\
     \hline
-    Prijs & Gratis (M365) & Gratis (non-profit) & Betaald \\
+    Lokale opslag & Nee & Ja (self-hosted) & Nee (cloud) & Ja (volledig lokaal)\\
     \hline
-  \end{tabular}
+    Prijs & Gratis (M365) & Gratis (non-profit) & Betaald & Gratis (open-source)\\
+    \hline
+  \end{tabularx}
   \label{tab:fit-analyse}
 \end{table}
+
+Uit deze analyse blijkt dat geen van de drie cloudgebaseerde tools volledig voldoet aan alle vereisten. 
+Microsoft Forms is voor de beoogde use case onvoldoende geschikt: 
+de beperkte dynamische vragenlogica vormt een kritisch obstakel. 
+Er ontbreekt native API-ondersteuning en data worden opgeslagen op de Microsoft-servers, 
+wat strijdig is met de vereiste van lokale gegevensopslag in een zorgcontext. 
+
+REDCap biedt sterke functionaliteit en kan self-hosted worden ingezet, 
+maar de configuratiecomplexiteit en het vereiste serverbeheer maken het minder geschikt als basis voor een snel te realiseren proof-of-concept interface. 
+
+SurveySparrow scoort sterk op dynamische logica en distributiemogelijkheden, 
+maar slaat alle data op in de cloud, wat een onoverkomelijk privacybezwaar vormt. 
+
+SurveyJS onderscheidt zich van de overige tools doordat het als enige volledig voldoet aan de vereiste van lokale gegevensopslag: 
+de bibliotheek draait volledig client-side, zonder enige dataoverdracht naar externe servers. 
+Daarnaast biedt SurveyJS uitstekende dynamische vragenlogica en een native integratie met Angular, 
+wat de ontwikkeling van de proof-of-concept interface aanzienlijk vereenvoudigt.
+
+Dit leidt tot de keuze voor een op maat ontwikkelde interface, 
+waarbij SurveyJS als kernbibliotheek wordt ingezet. 
+SurveyJS is een open-source JavaScript-bibliotheek die volledig lokaal kan worden uitgevoerd zonder afhankelijkheid van externe servers. 
+De bibliotheek biedt uitgebreide ondersteuning voor dynamische vragenlogica, conditionele weergave van vragen, en visuele aanpassingsmogelijkheden. 
+Doordat SurveyJS volledig client-side draait en gegevens lokaal worden opgeslagen, voldoet de oplossing aan de privacyvereisten die inherent zijn aan de verwerking van gegevens over huisartsenpraktijken. 
+De integratie van SurveyJS in een Angular-frontend combineert de flexibiliteit van een zelfgebouwd systeem met de bewezen vragenlijstfunctionaliteit van een gespecialiseerde bibliotheek.
+
 
 \subsection{Framework}
 \label{subsec:framework}
@@ -291,10 +269,14 @@ om meerdere redenen gemotiveerd.\\
 
 Ten eerste biedt Angular een duidelijke en gestructureerde architectuur op basis van
 componenten, modules en services, wat de onderhoudbaarheid en uitbreidbaarheid van de
-codebase ten goede komt. Ten tweede beschikt Angular over sterke ingebouwde
+codebase ten goede komt. 
+
+Ten tweede beschikt Angular over sterke ingebouwde
 ondersteuning voor formulieren en validatiemechanismen via zowel template-driven als
 reactive forms, wat bijzonder relevant is voor het ontwikkelen van interactieve vragenlijsten
-met conditionele logica. Ten derde laat de bestaande voorkennis en praktijkervaring met het
+met conditionele logica. 
+
+Ten derde laat de bestaande voorkennis en praktijkervaring met het
 framework toe om de ontwikkeltijd te beperken en de focus te leggen op het onderzoeksdoel,
 met name het ontwerpen en evalueren van een gebruiksvriendelijke interface.\\
 
@@ -314,11 +296,14 @@ ontwikkeld door John Brooke in 1986 en bestaat uit tien stellingen die de gebrui
 op een vijfpunts Likert-schaal. De berekende SUS-score situeert zich tussen 0 en 100 en laat
 toe de interface te positioneren ten opzichte van internationale usabilitynormen.\\
 
+De SUS wordt als primaire usability-meting gehanteerd om twee redenen. 
+Ten eerste is het een internationaal gevalideerd instrument.
+Ten tweede vereist de SUS slechts een kleine steekproef (10 tot 12 gebruikers volstaan voor betrouwbare resultaten) \autocite{Lewis,Tullis2006}.
+Wat haalbaar is binnen de context van dit onderzoek.
+
 Een SUS-score van 68 wordt beschouwd als het gemiddelde van commerciële systemen. Scores
 boven 75 worden internationaal als \textit{good usability} beschouwd, terwijl scores boven 85
-als \textit{excellent} worden aangemerkt. De SUS heeft het voordeel
-dat het een kleine steekproef vereist (5 tot 10 gebruikers volstaan voor betrouwbare
-resultaten), wat haalbaar is binnen de context van dit onderzoek.\\
+als \textit{excellent} worden aangemerkt.\\
 
 In het kader van deze bachelorproef wordt een SUS-score van minimaal 75 als succescriterium
 gehanteerd. Dit impliceert dat de interface door huisartsen en praktijkmedewerkers als
