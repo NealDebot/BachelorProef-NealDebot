@@ -1,68 +1,243 @@
 \chapter{\IfLanguageName{dutch}{analyse en rapportering}{rapporting}}%
 \label{ch:analyse}
 
-In dit hoofdstuk worden de verzamelde gegevens uit de gebruikerstesting systematisch geanalyseerd en geïnterpreteerd.
-De kwantitatieve SUS-scores en de kwalitatieve feedbackdata worden afzonderlijk verwerkt en vervolgens samen besproken in relatie tot de centrale onderzoeksvraag.
-Tot slot worden de bevindingen gekoppeld aan de literatuur en worden concrete aanbevelingen geformuleerd voor verdere ontwikkeling of implementatie.
+In dit hoofdstuk worden de resultaten van de gebruikersevaluatie systematisch geanalyseerd en geïnterpreteerd.
+De applicatie werd getest door twaalf deelnemers, allen actief in de eerstelijnszorg.
+De kwantitatieve SUS-scores en de bijhorende tijdsmetingen worden afzonderlijk besproken, waarna de kwalitatieve open feedback thematisch wordt geanalyseerd.
+Tot slot worden de bevindingen geïntegreerd en worden concrete aanbevelingen geformuleerd voor verdere ontwikkeling.
 
 \section{Kwantitatieve analyse van de SUS-scores}
 \label{sec:susscores}
 
-De SUS-scores van alle deelnemers worden individueel berekend via de gestandaardiseerde formule en vervolgens gemiddeld over de volledige testgroep. 
-De gemiddelde score bedraagt [score op 100], met een minimum van [AANVULLEN] en een maximum van [AANVULLEN]. 
-De spreiding tussen de laagste en hoogste score bedraagt [AANVULLEN] punten, wat [duidt op een homogene/heterogene beoordeling] van de gebruiksvriendelijkheid door de verschillende deelnemers.
+\subsection{Berekening en algemene resultaten}
+ 
+De SUS-score wordt berekend via de gestandaardiseerde formule: voor de vijf positief geformuleerde stellingen (Q1, Q3, Q5, Q7, Q9) wordt de score verminderd met 1; voor de vijf negatief geformuleerde stellingen (Q2, Q4, Q6, Q8, Q10) wordt de score afgetrokken van 5.
+De som van alle gecorrigeerde deelscores wordt vermenigvuldigd met 2,5, wat een totaalscore oplevert op een schaal van 0 tot 100.
+ 
+Tabel~\ref{tab:sus-scores} geeft een overzicht van de individuele SUS-scores en de bijhorende tijdsmetingen per deelnemer.
+ 
+\begin{table}[H]
+    \centering
+    \caption{Overzicht van SUS-scores en tijdsmetingen per deelnemer}
+    \label{tab:sus-scores}
+    \begin{tabular}{lccc}
+        \toprule
+        \textbf{Deelnemer} & \textbf{SUS-score} & \textbf{Invultijd vragenlijst} & \textbf{Registratietijd} \\
+        \midrule
+        P01 &  72,5 &  1 min 21 sec & 3 min 2 sec \\
+        P02 &  80,0 &      -- &      -- \\
+        P03 &  67,5 & 2 min 29 sec & 5 min 36 sec \\
+        P04 &  75,0 & 2 min 27 sec & 3 min 20 sec \\
+        P05 &  65,0 & 2 min 1 sec &  1 min 16 sec \\
+        P06 &  80,0 & 9 min 28 sec* & 4 min 2 sec \\
+        P07 &  50,0 & 5 min 50 sec & 5 min 25 sec \\
+        P08 &  87,5 & 1 min 58 sec & 3 min 11 sec \\
+        P09 &  72,5 &      -- &      -- \\
+        P10 &  72,5 & 1 min 43 sec & 2 min 25 sec \\
+        P11 &  75,0 & 2 min 50 sec & 11 min 34 sec* \\
+        P12 &  90,0 & 2 min 50 sec & 2 min 52 sec \\
+        \midrule
+        \textbf{Gemiddelde} & \textbf{73,96} & \textbf{3 min 17 sec} & \textbf{4 min 16 sec} \\
+        \textbf{Mediaan}    & \textbf{73,75} & \textbf{2 min 28 sec} & \textbf{3 min 15 sec} \\
+        \bottomrule
+    \end{tabular}
+    \begin{tablenotes}
+        \small
+        \item *Vermoedelijke outlier (opengelaten browsertabblad). Tijdsmedianen zijn robuuster voor interpretatie.
+    \end{tablenotes}
+\end{table}
 
-Ter vergelijking met de internationale usabilitynormen: een score van 68 geldt als het gemiddelde van commerciële systemen, scores boven 75 worden beschouwd als goede usability en scores boven 85 als uitstekend. 
-De behaalde score van [AANVULLEN] situeert de interface [boven/onder/rond] het vooraf bepaalde succescriterium van 75. 
-Dit impliceert dat de interface door de testgroep als [goed/gemiddeld/uitstekend] bruikbaar wordt beoordeeld.
-Een analyse per stelling geeft een meer genuanceerd beeld. 
-De stellingen waarop gemiddeld het laagst werd gescoord zijn stelling [nummer] (“[tekst van de stelling]”, gemiddeld [AANVULLEN] op 5) en stelling [nummer] (“[AANVULLEN]”, gemiddeld [AANVULLEN] op 5). 
-Deze lagere scores wijzen op mogelijke knelpunten rond [bv. consistentie van de interface, leergemak of navigatiestructuur]. 
-De hoogst scorende stellingen zijn stelling [AANVULLEN] en stelling [AANVULLEN], wat erop duidt dat de deelnemers de interface als [AANVULLEN: bv. vlot te gebruiken en goed geïntegreerd] ervaarden.
+De gemiddelde SUS-score over alle twaalf deelnemers bedraagt \textbf{73,96} (mediaan: 73,75), met een minimum van 50,0 en een maximum van 90,0.
+De spreiding van 40 punten wijst op een heterogene beoordeling: de meerderheid van de deelnemers beoordeelt de applicatie positief, maar één deelnemer (P07) ervaart duidelijke usabilityproblemen.
+ 
+Ter vergelijking met internationale usabilitynormen: een SUS-score van 68 geldt als het industriegemiddelde voor commerciële systemen.
+Scores tussen 68 en 80 worden beschouwd als \textit{goed}, scores boven 80 als \textit{uitstekend} \autocite{Brooke1995}.
+De behaalde gemiddelde score van 73,96 situeert de applicatie in de categorie \textit{goed}, wat impliceert dat de interface door de testgroep als aangenaam bruikbaar wordt ervaren.
+Vier deelnemers (P02, P06, P08, P12) behalen een score boven 80, wat als uitstekend wordt beschouwd.
+
+\subsection{Analyse per stelling}
+\label{subsec:analyseperstelling}
+ 
+Tabel~\ref{tab:sus-per-stelling} toont de gemiddelde scores per SUS-stelling, gesorteerd van laagste naar hoogste gemiddelde.
+De waarden zijn weergegeven op een schaal van 1 tot 5.
+ 
+\begin{table}[H]
+    \centering
+    \caption{Gemiddelde score per SUS-stelling (schaal 1--5)}
+    \label{tab:sus-per-stelling}
+    \begin{tabular}{clcc}
+        \toprule
+        \textbf{Q\#} & \textbf{Stelling (samenvatting)} & \textbf{Type} & \textbf{Gem.} \\
+        \midrule
+        Q4  & Technische hulp nodig          & Negatief & 1,08 \\
+        Q10 & Veel moeten leren              & Negatief & 1,17 \\
+        Q8  & Onnodig ingewikkeld            & Negatief & 1,75 \\
+        Q2  & Onnodig complex                & Negatief & 2,17 \\
+        Q6  & Veel inconsistenties           & Negatief & 2,17 \\
+        Q1  & Regelmatig willen gebruiken    & Positief & 2,58 \\
+        Q5  & Functies goed geïntegreerd     & Positief & 3,58 \\
+        Q9  & Zeker bij gebruik              & Positief & 3,83 \\
+        Q3  & Gemakkelijk te gebruiken       & Positief & 3,92 \\
+        Q7  & Snel onder de knie             & Positief & 4,00 \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+ 
+De laagste gemiddelden op de negatieve stellingen (Q4: 1,08; Q10: 1,17) zijn positief nieuws: deelnemers voelden zich niet afhankelijk van technische hulp en hadden weinig voorkennis nodig.
+Dit wijst op een lage instapdrempel voor de applicatie.
+ 
+De hoge gemiddelden op Q3 (3,92) en Q7 (4,00) bevestigen dat de applicatie als gemakkelijk te gebruiken en snel aan te leren wordt beschouwd.
+ 
+De laagste score op een positieve stelling is Q1 (2,58: ``Ik denk dat ik deze applicatie graag regelmatig zou gebruiken'').
+Dit lage gemiddelde is inhoudelijk verklaarbaar: meerdere deelnemers gaven aan de applicatie niet regelmatig nodig te hebben omdat hun praktijk reeds goed georganiseerd is, of omdat ze de meerwaarde van de tools nog niet zien in hun specifieke context.
+Dit is geen usabilityprobleem, maar eerder een vraag naar relevantie en adoptie.
+ 
+De moderaat verhoogde score op Q6 (2,17: inconsistenties) wijst op een reëel verbeterpunt in de interface-consistentie, wat ook in de open feedback werd bevestigd.
+
+\section{Tijdsanalyse}
+\label{sec:tijden}
+ 
+\subsection{Invultijd van de vragenlijst}
+ 
+De invultijd van de vragenlijst (de eigenlijke jaarlijkse toegankelijkheidsvragenlijst, niet de registratie) varieert sterk tussen deelnemers.
+Exclusief de outlier van P06 (9 min 28 sec) bedraagt het gemiddelde \textbf{2 minuten en 37 seconden} en de mediaan \textbf{2 minuten en 13 seconden} over de negen resterende deelnemers.
+De mediaan is hier de meest representatieve maat gezien de scheve verdeling.
+
+Wanneer ook de outlier van P07 (5 min 50 sec) in beschouwing genomen wordt als een deelnemer die mogelijk afgeleid was of extra grondig te werk ging, dan schommelt de ``typische'' invultijd voor een gebruiker tussen de 1 minuut 21 seconden en 2 minuten 50 seconden.
+Dit is aanzienlijk lager dan de beoogde beknoptheid, wat suggereert dat indicatoren opsplitsen naar gegevens die een praktijk kenmerken en de effectieve vragenlijst degelijke voordelen biedt.
+ 
+\subsection{Registratietijd}
+ 
+De registratietijd (het aanmaken van een account en het invullen van de praktijkinformatie) bedraagt gemiddeld \textbf{3 minuten en 28 seconden} en mediaan \textbf{3 minuten en 7 seconden}, exclusief de outlier van P11 (11 min 34 sec).
+Dit is de éénmalige kost die deelnemers maken bij de eerste aanmelding.
+P05 deed dit opvallend snel (1 min 16 sec), terwijl anderen significant meer tijd nodig hadden, vermoedelijk doordat het verzamelen van praktijkgegevens (RIZIV-nummers, adressen, geboortejaren van artsen) enige voorbereiding vereist.
+ 
+Meerdere deelnemers gaven in de open feedback aan dat de registratie de meest tijdrovende fase was en dat het nuttig zou zijn mocht praktijkdata automatisch ingeladen kunnen worden vanuit bestaande systemen (zie sectie~\ref{sec:knelpunten}).
+
 
 \section{Kwalitatieve analyse van de open feedback}
 \label{sec:openfeedback}
-
-De open feedbackresponsen worden geanalyseerd via thematische codering: 
-gelijkaardige opmerkingen worden gegroepeerd onder een gemeenschappelijk thema, zodat terugkerende patronen zichtbaar worden. 
-In totaal werden [aantal] feedbackresponsen ontvangen. 
-De codering resulteerde in [aantal] terugkerende thema’s, die hieronder worden besproken.
-
+ 
+De open feedbackresponsen werden thematisch gecodeerd.
+Gelijkaardige opmerkingen werden gegroepeerd onder een gemeenschappelijk thema, zodat terugkerende patronen zichtbaar werden.
+In totaal werden twaalf reeksen antwoorden geanalyseerd.
+De codering resulteerde in vier terugkerende thema's.
+ 
 \subsection{Positieve bevindingen}
 \label{subsec:positief}
-
-[beschrijving van de positieve opmerkingen. Wat waardeerden deelnemers het meest? Voorbeelden van mogelijke thema’s: duidelijke vraagformulering, overzichtelijke navigatie, nuttige voortgangsindicator, beperkte invultijd. Verwijs eventueel naar concrete citaten ter illustratie, bv.: “[citaat deelnemer]'' (deelnemer [nummer]).] 
-
+ 
+Het meest geciteerde positieve aspect is de \textbf{vlotte doorloop en lage cognitieve belasting} van de vragenlijst.
+Deelnemers omschrijven de applicatie als ``snel ingevuld'', ``vlotte doorloop'' en ``weinig laadtijd tussen onderdelen''.
+P08 stelt expliciet: ``voor een sukkel als ik aan de pc leek de applicatie me wel eenvoudig in te vullen'', wat aangeeft dat ook minder technisch onderlegde gebruikers de interface toegankelijk vinden.
+ 
+Een tweede positief thema is de \textbf{inhoudelijke kwaliteit van de vraagstelling}.
+Deelnemers omschrijven de vragen als ``duidelijk en genuanceerd'', ``volledig'' en ``doet nadenken over aspecten van toegankelijkheid die minder evident zijn''.
+Dit wijst erop dat de vragenlijst inhoudelijk aansluit bij de noden van de doelgroep.
+ 
 \subsection{Knelpunten en verbeterpunten}
-\label{subsec:knelpunten}
+\label{sec:knelpunten}
+ 
+\paragraph{Interface-inconsistenties en navigatie.}
+Het meest terugkerende knelpunt is de \textbf{inconsistentie in de interface}.
+P03 merkt op dat toggles (schuivers) voor ja/neen-opties niet consistent zijn met knoppen elders in de applicatie en adviseert een uniforme keuze.
+P05 wijst op de verticale, gecentreerde lay-out die veel horizontale schermruimte onbenut laat op desktopschermen, terwijl het rapport-onderdeel net een horizontale indeling heeft.
+P07 beschrijft de navigatie via tabbladen als onlogisch: ``er werd gewerkt met tabbladen, en ook moest je van het tweede weer naar het eerste tabblad gaan, wat onlogisch aanvoelt.''
+ 
+\paragraph{Automatisch opslaan en gegevensverlies.}
+P03 ondervond gegevensverlies bij het wisselen van tabblad binnen de sectie ``Praktijk informatie'': het formulier werd niet automatisch opgeslagen.
+Dit werd bevestigd door P01 die ``2x op dezelfde pagina'' terechtkwam.
+Automatisch opslaan van formulierstatus is een concrete en haalbare verbetering.
+ 
+\paragraph{Pop-upberichten en toegankelijkheid.}
+P07 merkt op dat pop-upberichten na het opslaan snel verdwijnen en niet meer oproepbaar zijn.
+Dit is bijzonder problematisch voor patiënten met beperkte taalvaardigheid of lage digitale geletterdheid, die tekst niet kunnen kopiëren of laten vertalen.
+ 
+\paragraph{Rapportgeneratie.}
+Meerdere deelnemers (P05, P12) geven aan dat het gegenereerde rapport te vaag is.
+P12 stelt: ``De uitleg achteraf is te vaag. Bv een aantal voorstellen tot verbetering doen we al.''
+P05 vraagt om meer transparantie over hoe het rapport wordt gegenereerd en suggereert de integratie van vrije tekst in de vragenlijst voor een meer gepersonaliseerd rapport.
+ 
+\paragraph{Meerwaarde en adoptie.}
+Een deel van de deelnemers ervaart de applicatie als minder relevant voor hun huidige situatie.
+P04 geeft aan de meerwaarde inhoudelijk niet te zien omdat ``het thema's zijn waar we reeds mee bezig zijn''.
+P14 verwijst naar een bestaande ``huisartsenzoeker'' als alternatief.
+Dit wijst op de nood aan duidelijke communicatie over de toegevoegde waarde van de applicatie ten opzichte van bestaande tools.
+ 
+\subsection{Suggesties voor nieuwe functies}
+\label{subsec:functies}
+ 
+Deelnemers deden ook constructieve suggesties voor uitbreidingen:
+\begin{itemize}
+    \item \textbf{Visualisatie van scores} via een spinnenweb of radar chart, met evolutie in de tijd (cf. mijnpositievegezondheid.nl), gesuggereerd door P03.
+    \item \textbf{Automatische koppeling met RIZIV-data} voor het vooraf invullen van praktijkgegevens, gesuggereerd door P11.
+    \item \textbf{Bijkomende vragen} over de effectieve patiëntencontacturen per arts (P11) en de gemiddelde wachttijd voor een niet-urgente afspraak (P03).
+    \item \textbf{Meer genuanceerde antwoordopties} in de vragenlijst, bv. een optie ``dit is in ontwikkeling, maar nog niet binnen 6 maanden'', gesuggereerd door P12.
+    \item \textbf{Inzage in eerder ingevulde antwoorden} na het voltooien van de vragenlijst, gesuggereerd door P05.
+\end{itemize}
 
-[beschrijving van de terugkerende knelpunten of verbeterpunten die deelnemers aanhaalden. Voorbeelden van mogelijke thema’s: onduidelijke indicatoren, ontbrekende toelichting bij bepaalde vragen, technische problemen, onduidelijke navigatie tussen secties. Koppel elk knelpunt waar mogelijk aan een specifieke stelling of onderdeel van de interface.]
+\section{Visuele gebruiksdata via Microsoft Clarity}
+\label{sec:clarity}
+ 
+Naast de SUS-evaluatie werd \textbf{Microsoft Clarity} geïntegreerd in de applicatie voor passieve gedragsanalyse.
+Clarity registreert anoniem klikgedrag, scrolldiepte en sessieduur, en genereert heatmaps die zones van hoge interactie visualiseren.
 
+\newpage
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth,angle=90,scale=1.5]{Clarity_IPTH_Click-Pc_05-27-2026 23 32.png}
+    \caption{Clarity heatmap van de ``Praktijk Informatie''-pagina. Warme zones (rood/oranje) duiden op frequent klikgedrag.}
+    \label{fig:heatmap-praktijkinfo}
+\end{figure}
+\newpage
+De heatmaps bevestigen de bevindingen uit de SUS-evaluatie op verschillende punten.
+Ten eerste is er verhoogde kliktactiviteit zichtbaar rond de navigatietabs in de ``Praktijk Informatie''-sectie, wat overeenkomt met de feedbackopmerkingen over onduidelijke navigatie tussen de tabs.
+Ten tweede tonen de heatmaps relatief weinig interactie in de zijbalken van het scherm, wat de observatie van P05 bevestigt dat de horizontale ruimte onvoldoende benut wordt.
+Ten derde is de interactie met de opslaan-knoppen prominent aanwezig, wat suggereert dat gebruikers actief op zoek zijn naar bevestiging na het invullen, een aanwijzing voor de behoefte aan duidelijkere feedback na een save-actie.
+ 
 \section{Geïntegreerde bespreking}
 \label{sec:bespreking}
-
-De kwantitatieve en kwalitatieve resultaten worden in dit onderdeel samen besproken in relatie tot de twee deelvragen van het onderzoek. 
-De eerste deelvraag betreft de mate waarin de interface bijdraagt aan een consistentere interpretatie van toegankelijkheidsindicatoren. 
-[beantwoord deze deelvraag op basis van de feedbackdata. Meldden deelnemers minder interpretatieproblemen dan bij de klassieke vragenlijst? Welke indicatoren bleven aanleiding geven tot verwarring?]
-
-De tweede deelvraag betreft de cognitieve belasting tijdens het invulproces. 
-[beantwoord deze deelvraag op basis van de SUS-scores en de open feedback. Gaven deelnemers aan dat de interface minder mentale inspanning vereiste dan de klassieke vragenlijst? Welke elementen droegen hier het meest aan bij, bv. de voortgangsindicator, de modulaire opbouw, de conditionele vraaglogica?]
-
-De bevindingen sluiten [grotendeels/gedeeltelijk/beperkt] aan bij de verwachtingen uit de literatuur. 
-De aanbeveling van \autocite{Merckx2023} om de belasting te minimaliseren via een doordachte selectie van indicatoren en slimme automatisering wordt door de testresultaten [AANVULLEN: bevestigd/gedeeltelijk bevestigd/genuanceerd]: [AANVULLEN: leg kort uit waarom]. 
-Een beperking van dit onderzoek is de relatief kleine testgroep, wat de generaliseerbaarheid van de resultaten naar de bredere Vlaamse huisartsenpraktijk beperkt. 
-Verdere validatie met een grotere en meer diverse steekproef blijft dan ook aangewezen.
+ 
+De kwantitatieve en kwalitatieve resultaten worden hier samen besproken in relatie tot de centrale onderzoeksvraag: in welke mate draagt de ontwikkelde proof-of-concept bij aan een toegankelijkere en minder belastende methode voor de jaarlijkse evaluatie van huisartsenpraktijken.
+ 
+De gemiddelde SUS-score van 73,96 situeert de applicatie als \textit{goed bruikbaar} volgens de internationale normen~\autocite{Brooke1996}.
+De lage scores op de negatieve stellingen Q4 (technische hulp nodig: 1,08) en Q10 (veel moeten leren: 1,17) bevestigen dat de applicatie een lage instapdrempel heeft en door gebruikers zonder technische achtergrond zelfstandig kan worden ingevuld.
+Dit sluit aan bij de aanbeveling uit de literatuur om digitale evaluatietools zo intuïtief mogelijk te ontwerpen~\autocite{Merckx2023}.
+ 
+De tijdsmetingen tonen aan dat de registratiefase (mediaan: 3 min 15 sec) meer tijd vergt dan de eigenlijke vragenlijst (mediaan: 2 min 28 sec).
+Dit is te verwachten voor een eenmalige setup, maar het benadrukt ook het belang van integratie met bestaande datasystemen zoals RIZIV-registers of mutualiteitdata om de instapdrempel te verlagen.
+ 
+Een belangrijk knelpunt is de \textbf{inconsistentie in de interface}. Zowel in de SUS-score (Q6: 2,17) als in de open feedback expliciet benoemd.
+ 
+De lage score op Q1 (regelmatig willen gebruiken: 2,58) reflecteert niet zozeer een usabilityprobleem, maar een \textbf{adoptievraagstuk}: de meerwaarde van de applicatie moet duidelijker worden gecommuniceerd, en de koppeling met een concreet beleids- of kwaliteitsverbeteringsproces binnen de eerstelijnszorg is essentieel voor een duurzame adoptie.
+ 
+Een beperking van dit onderzoek is de relatief kleine testgroep ($n = 12$), wat de generaliseerbaarheid beperkt.
+Verdere validatie met een grotere en meer diverse steekproef, inclusief praktijken uit verschillende regio's en praktijkvormen, blijft aangewezen.
 
 \section{Aanbevelingen voor verdere ontwikkeling}
 \label{sec:aanbevelingen}
 
-Op basis van de geanalyseerde testresultaten worden de volgende aanbevelingen geformuleerd voor verdere ontwikkeling of implementatie van de interface.
-
-Een eerste aanbeveling betreft [ bv. het verder verfijnen van de vraagformulering van indicatoren die tijdens de testing aanleiding gaven tot verwarring]. 
-[motiveer kort waarom dit prioritair is op basis van de testresultaten.]
-Een tweede aanbeveling betreft [ bv. de integratie van automatische invulling van velden op basis van bestaande databronnen zoals IMA of mutualiteiten, conform de aanbeveling van Merckx2023]. 
-Dit zou de invultijd verder kunnen reduceren en de drempel voor deelname aan toekomstige evaluaties verlagen.
-
-Een derde aanbeveling betreft de schaalbaarheid van de interface naar andere eerstelijnszones in Vlaanderen. 
-[ aangeven welke aanpassingen hiervoor nodig zouden zijn, bv. generalisering van de indicatorenset, meertaligheid, of koppeling met bestaande registratiesystemen.]
-
+Op basis van de geanalyseerde testresultaten worden de volgende aanbevelingen geformuleerd, gerangschikt naar urgentie.
+ 
+\paragraph{1. Automatisch opslaan van formulierdata.}
+Het ontbreken van automatisch opslaan bij het wisselen van tabblad leidde bij meerdere deelnemers tot gegevensverlies.
+Dit is de meest directe technische verbetering die kan worden doorgevoerd en heeft een grote impact op de gebruikerservaring.
+ 
+\paragraph{2. Interface-consistentie.}
+De inconsistentie tussen toggles en knoppen, en tussen de verticale lay-out van de registratiepagina's en de horizontale lay-out van het rapport, dient te worden gestandaardiseerd.
+Een duidelijke en consistente designtaal verhoogt de usability en verlaagt de cognitieve belasting.
+ 
+\paragraph{3. Gepersonaliseerde rapportgeneratie.}
+Het huidige mock-rapport biedt generieke aanbevelingen die niet aansluiten bij de specifieke situatie van de praktijk.
+De integratie van een LLM-gebaseerde rapportgeneratie, die de ingevulde antwoorden als context gebruikt, zou de relevantie van de rapporten aanzienlijk verhogen en is technisch haalbaar via de Anthropic API.
+ 
+\paragraph{4. Koppeling met bestaande datasystemen.}
+Automatisch inladen van praktijkgegevens vanuit RIZIV-registers of mutualiteitdata zou de registratietijd significant verkorten en de drempel voor deelname verlagen.
+Dit vereist samenwerking met de betrokken instanties maar heeft een grote potentiële impact op de adoptie.
+ 
+\paragraph{5. Visualisatie en longitudinale opvolging.}
+De suggestie van P03 om scores te visualiseren via een grafiek met evolutie in de tijd is waardevol voor het aantonen van de meerwaarde van het instrument.
+Praktijken kunnen zo hun eigen vooruitgang opvolgen en vergelijken met regionale gemiddelden.
+ 
+\paragraph{6. Uitbreiding naar andere eerstelijnszones.}
+Bij opschaling naar andere eerstelijnszones in Vlaanderen dient rekening gehouden te worden met regionale variaties in praktijkvormen en registratiesystemen.
+Een meertalige interface zou de toepasselijkheid verder verbreden.
