@@ -4,35 +4,192 @@
 \section{Opzet van de testing}
 \label{sec:opzet}
 
-De gehoste applicatie werd verspreid onder huisartsen en praktijkmedewerkers via een uitnodigingsmail aan circa 30 praktijken binnen Eerstelijnszone Aalst en omligende regios.
-de deelnemers werden gevraagd om de interface zelfstanndig te doorlopen en na afloop een vragenlijst in te vullen bestaande uit twee onderdelen:
+De gehoste applicatie werd verspreid onder huisartsen en praktijkmedewerkers via een uitnodigingsmail. 
+32 praktijken binnen Eerstelijnszone Aalst en omligende regio's werden hiervoor gecontacteerd.
+De deelnemers werden gevraagd om de interface zelfstandig te doorlopen en na afloop een vragenlijst in te vullen bestaande uit twee onderdelen:
 
 \begin{itemize}
     \item De gestandaardiseerde System Usability Scale (SUS).
     \item Een open feedback gedeelte.
 \end{itemize}
 
-De SUS bestaat uit tien stellingen die worden beoordeeld op een vijfpunts Likertschaal en levert een score op tussen 0 en 100.
+Voor de afname van deze evaluatievragenlijst werd gebruikgemaakt van \textbf{Google Forms}. 
+Deze keuze werd gemaakt om de antwoorden centraal en gestructureerd te verzamelen en de resultaten eenvoudig te kunnen exporteren naar een spreadsheet voor verdere verwerking en analyse. 
+De spreadsheet werd gebruikt voor het berekenen van de individuele en gemiddelde SUS-scores, evenals de mediaan van de SUS-scores. 
+
+Naast de vragenlijst werd gebruikgemaakt van \textbf{Microsoft Clarity} voor het verzamelen van gebruikersinteracties en tijdsmetingen. 
+Via sessie-opnames en interactiedata konden onder meer de registratietijd en de totale invultijd van de vragenlijst worden geanalyseerd. 
+Daarnaast maakte Microsoft Clarity het mogelijk om gebruikersgedrag te observeren via klik- en scrollgedrag, wat aanvullende inzichten bood in mogelijke gebruiksproblemen binnen de interface.
+
+
+De System Usability Scale bestaat uit tien stellingen die worden beoordeeld op een vijfpunts Likertschaal en levert een score op tussen 0 en 100.
+
+\begin{enumerate}
+    \item Ik denk dat ik deze applicatie graag regelmatig zou gebruiken.
+    \item Ik vond de applicatie onnodig complex.
+    \item Ik vond de applicatie gemakkelijk te gebruiken.
+    \item Ik denk dat ik de ondersteuning van een technisch persoon nodig zou hebben om deze applicatie te kunnen gebruiken.
+    \item Ik vond de verschillende functies in deze applicatie goed geïntegreerd.
+    \item Ik vond dat er veel inconsistenties in de applicatie zaten.
+    \item Ik kan me voorstellen dat de meeste mensen deze applicatie snel onder de knie zouden krijgen.
+    \item Ik vond de applicatie onnodig ingewikkeld om te gebruiken.
+    \item Ik voelde me erg zeker bij het gebruiken van deze applicatie.
+    \item Ik moest veel leren voordat ik met deze applicatie aan de slag kon.
+\end{enumerate}
+
 Het open feedbackgedeelte liet deelnemers vrij aangeven wat goed werkte, wat voor verbetering vatbaar was en welke elementen zij als verwarrend of onduidelijk ervaarden.
+Dit gedeelte bestond uit 5 vragen:
+
+\begin{enumerate}
+    \item Wat vond je het meest waardevol aan de applicatie?
+    \item Wat vond je het minst prettig of verwarrend?
+    \item Mis je bepaalde functies die je zou verwachten?
+    \item Zou je deze applicatie gebruiken in je dagelijkse praktijk? Waarom wel/niet?
+    \item Heb je nog andere opmerkingen of suggesties?
+\end{enumerate}
+
+De combinatie van subjectieve evaluatie via de SUS-score en objectieve interactiedata via Microsoft Clarity maakte het mogelijk om de gebruiksvriendelijkheid van de interface vanuit meerdere perspectieven te beoordelen.
 
 \section{Deelnemers}
 \label{sec:deelnemers}
 
-In totaal namen [nog verder in te vullen] huisartsen en/of praktijkmedewerkers deel aan de testing.
-[verder aanvullen met korte beschrijving van de steekproef vb. verdeling huisartsen vs praktijkmedewerks, solo- vs groepspraktijken ...]
+In totaal namen 12 huisartsen en/of praktijkmedewerkers deel aan de testing. 
+Dit komt neer op een responsegraad van 35,3\%.
+
+De deelnemers werden gerekruteerd via e-mailcommunicatie naar huisartsenpraktijken binnen Eerstelijnszone Aalst en omliggende regio's. 
+Tijdens de rekrutering bleek dat persoonlijke contactkanalen een duidelijke invloed hadden op de responsgraad. 
+Praktijken waarbij rechtstreeks contact mogelijk was met een arts of medewerker reageerden merkbaar vaker dan praktijken die uitsluitend via een algemeen praktijkadres werden gecontacteerd. 
+Daarnaast leidde ook communicatie via tussenpersonen of bestaande professionele contacten tot een hogere respons.
+
+De meerderheid van de ontvangen antwoorden was afkomstig van groepspraktijken en in beperktere mate van duopraktijken. 
+Er werden geen bruikbare responses ontvangen vanuit solopraktijken, waardoor deze categorie niet vertegenwoordigd is binnen de steekproef. 
+Dit vormt een beperking van het onderzoek, aangezien de gebruikservaring en organisatorische context van solopraktijken mogelijk verschillen van grotere praktijkstructuren.
+
+De steekproef kan bijgevolg niet als volledig representatief worden beschouwd voor alle types huisartsenpraktijken binnen de eerstelijnszorg. 
+Desondanks biedt de testing waardevolle inzichten in de bruikbaarheid van de ontwikkelde interface binnen een reële zorgcontext.
 
 \section{SUS-resultaten}
 \label{sec:susresultaten}
 
-De SUS-score wordt berekend via de gestandaardiseerde formule: 
-voor oneven stellingen (1, 3, 5, 7, 9) wordt de score verminderd met 1, voor even stellingen (2, 4, 6, 8, 10) wordt de score afgetrokken van 5. 
-De som van alle gecorrigeerde scores wordt vermenigvuldigd met 2,5 om een eindscore op 100 te bekomen. 
-De gemiddelde SUS-score over alle deelnemers bedraagt [aanvullen met de gemiddelde score]. 
-Ter vergelijking: een score van 68 geldt als het internationaal gemiddelde van commerciële systemen, 
-scores boven 75 worden beschouwd als goede usability en scores boven 85 als uitstekend.
+De System Usability Scale (SUS) werd gebruikt om de ervaren gebruiksvriendelijkheid van de ontwikkelde interface te evalueren. 
+De SUS-score wordt berekend volgens de gestandaardiseerde methode waarbij de antwoorden op de tien stellingen worden omgerekend naar een score op 100.
+
+De gemiddelde SUS-score over alle deelnemers bedraagt 73,96, met een mediaanscore van 73,75. 
+De laagste geregistreerde score bedroeg 50, terwijl de hoogste score 90 bedroeg.
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|l|c|}
+        \hline
+        \textbf{Metriek} & \textbf{Score} \\
+        \hline
+        Gemiddelde SUS-score & 73,96 \\
+        Mediaan SUS-score & 73,75 \\
+        Minimumscore & 50 \\
+        Maximumscore & 90 \\
+        \hline
+    \end{tabular}
+    \caption{Overzicht van de SUS-resultaten}
+    \label{tab:susresultaten}
+\end{table}
+
+Volgens de benchmarkwaarden uit de literatuur geldt een SUS-score van 68 als het gemiddelde voor commerciële systemen, terwijl scores boven 75 worden beschouwd als indicatief voor een goede usability en scores boven 85 als uitstekend. 
+De bekomen resultaten wijzen bijgevolg op een bovengemiddelde gebruiksvriendelijkheid van de ontwikkelde interface.
+
+De beperkte spreiding tussen de gemiddelde en mediaanscore suggereert bovendien dat de resultaten relatief consistent verdeeld zijn over de verschillende deelnemers. 
+Een verdere analyse van de individuele scores en kwalitatieve feedback wordt besproken in het volgende hoofdstuk.
+
+\section{Tijdsmetingen}
+\label{sec:tijdsmetingen}
+
+Naast de SUS-score werden ook tijdsmetingen geanalyseerd op basis van Microsoft Clarity sessie-opnames. 
+Hierbij werden zowel de registratietijd als de totale invultijd van de evaluatievragenlijst gemeten.
+
+De resultaten tonen een gemiddelde, mediaan, minimum en maximum voor beide metrieken. 
+Deze waarden geven inzicht in de efficiëntie waarmee deelnemers de applicatie konden doorlopen en de vragenlijst konden invullen. 
+De exacte waarden zijn opgenomen in onderstaande tabel.
+
+\begin{table}[H]
+    \centering
+        \begin{tabular}{|l|c|c|}
+            \hline
+            \textbf{Metriek} & \textbf{Registratietijd} & \textbf{Invultijd} \\
+            \hline
+            Gemiddelde & 4:16 & 3:17 \\
+            Mediaan & 3:15 & 2:28 \\
+            Minimum & 1:16 & 1:21 \\
+            Maximum & 11:34 & 9:28 \\
+            \hline
+        \end{tabular}
+    \caption{Overzicht van de tijdsmetingen gebaseerd op Microsoft Clarity}
+    \label{tab:tijdsmetingen}
+\end{table}
 
 \section{Kwalitatieve feedback}
 \label{sec:kwalitatievefeedback}
 
-Naast de SUS-scores werd kwalitatieve feedback verzameld via het open gedeelte van de vragenlijst.
-Deze feedback werd thematisch gecodeerd en gegroepeerd in terugkerende aandachtspunten. [aanvullen met de meest voorkomende feedback]
+Naast de kwantitatieve SUS-score werd kwalitatieve feedback verzameld via het open gedeelte van de vragenlijst. 
+Deze feedback werd thematisch gecodeerd op basis van terugkerende patronen en gegroepeerd in overkoepelende thema's.
+
+De analyse resulteerde in vier dominante thema's: (1) inhoudelijke meerwaarde van de vragenlijst, (2) gebruiksvriendelijkheid en interfaceproblemen, (3) functionele uitbreidingen en automatisatie, en (4) adoptie en contextuele relevantie binnen de eerstelijnszorg.
+
+\subsection{Inhoudelijke meerwaarde}
+\label{subsec:inhoudelijkeMeerwaarde}
+
+Het eerste terugkerende thema betreft de inhoudelijke meerwaarde van de vragenlijst. 
+Verschillende deelnemers gaven aan dat de bevraagde informatie relevant en niet standaard beschikbaar is binnen bestaande systemen. 
+Vooral de bevraging van praktijkkenmerken en organisatiegegevens werd als nuttig beschouwd. 
+Tegelijk werd opgemerkt dat bepaalde vragen potentieel uitgebreid kunnen worden, bijvoorbeeld rond werkbelasting en praktijkorganisatie.
+
+\subsection{Gebruiksvriendelijkheid en interfaceproblemen}
+\label{subsec:gebruiksvriendelijkheidinterfaceproblemen}
+
+Een tweede thema betreft de gebruikservaring van de interface. 
+Hoewel de applicatie over het algemeen als vlot invulbaar werd ervaren, werd feedback gegeven op visuele aspecten zoals de hoeveelheid witruimte en de duidelijkheid van bepaalde UI-elementen, zoals de ja/nee-schuivers. 
+Dit wijst op verbeterpunten in visuele hiërarchie en componentkeuze binnen de interface.
+
+
+\subsection{Functionaliteit en automatisatie}
+\label{subsec:functionaliteitAutomatisatie}
+
+Een derde thema betreft gewenste uitbreidingen op vlak van functionaliteit. 
+Deelnemers suggereerden onder meer automatische invulling van praktijkgegevens, bijvoorbeeld via koppeling met bestaande registers zoals RIZIV-data. 
+Daarnaast werd het ontbreken van automatische opslag bij navigatie tussen verschillende delen van de vragenlijst als een beperking ervaren.
+
+\subsection{Adoptie en context}
+\label{subsec:adoptiecontext}
+
+Een vierde thema betreft de contextuele relevantie en adoptie van de tool. 
+Verschillende deelnemers gaven aan dat de meerwaarde van de applicatie afhankelijk is van de bestaande organisatie binnen de praktijk en van reeds gebruikte alternatieven. 
+In sommige gevallen werd verwezen naar bestaande oplossingen zoals regionale huisartsenzoekers, waardoor de nood aan een bijkomende tool beperkter werd ingeschat.
+
+\subsection{Overzicht}
+\label{subsec:overzicht}
+
+Overkoepelend tonen de resultaten aan dat de applicatie vooral wordt gewaardeerd om haar inhoudelijke relevantie en vlotte invulbaarheid, maar dat er duidelijke verbeterpunten zijn op vlak van gebruikersinterface en automatisatie. 
+Daarnaast blijkt dat de adoptie sterk contextafhankelijk is en beïnvloed wordt door bestaande digitale oplossingen binnen de eerstelijnszorg.
+
+\section{Beperkingen tijdens de testing}
+\label{sec:beperkingen}
+
+Tijdens de uitvoering van de gebruikerstesting werden enkele technische en methodologische beperkingen vastgesteld die een impact hebben op de volledigheid van de verzamelde data.
+
+Ten eerste werd een compatibiliteitsprobleem vastgesteld bij het gebruik van de applicatie op Firefox en bepaalde Apple-apparaten. 
+Hierbij werden de authenticatiegegevens niet correct opgeslagen, waardoor foutieve of mislukte requests naar de backend ontstonden. 
+Het compatibiliteitsprobleem dat zich voordeed bij het gebruik van Firefox en bepaalde Apple-apparaten kon tijdens de testfase worden geïdentificeerd en opgelost. 
+De oorzaak bleek te liggen in de configuratie van de authenticatieflow, waarbij de nodige OAuth-scopes niet volledig correct waren ingesteld.
+
+Door het toevoegen van de ontbrekende parameters binnen de Auth0-configuratie in de Angular applicatie werd het probleem opgelost:
+
+\begin{minted}{typescript}
+    audience: environment.auth0.authorizationParams.audience,
+    scope: 'openid profile email offline_access',
+\end{minted}
+
+Hierdoor werden de authenticatiegegevens correct opgeslagen en konden requests naar de backend opnieuw succesvol worden uitgevoerd.
+
+Ten tweede trad er een configuratieprobleem op bij het herstarten van de API-server, waarbij de omgevingsvariabelen (secrets) niet correct werden geïnitialiseerd. 
+Hierdoor bleef de API tijdelijk offline totdat de server manueel werd herstart.
+
+Ten slotte bleken er voor twee deelnemers geen Microsoft Clarity-opnames beschikbaar te zijn, waardoor voor deze cases geen tijdsmetingen konden worden geregistreerd. 
+Dit resulteert in een beperkte dataset voor de analyse van registratietijd en invultijd.
