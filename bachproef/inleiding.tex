@@ -20,11 +20,13 @@
 De toegankelijkheid van huisartsenpraktijken vormt een groeiende uitdaging binnen de Vlaamse
 eerstelijnszorg. Huisartsen worden vandaag geconfronteerd met een stijgende werkdruk,
 toenemende administratieve lasten en een dalende instroom van nieuwe artsen in de huisartsopleiding \autocite{Rampelberg2025a}.
+
 Om de situatie in kaart te brengen en gericht bij te sturen, maken zorgorganisaties zoals Domus Medica,
 UGent en eerstelijnszones gebruik van uitgebreide indicatorensets en bevragingen. In de praktijk
 worden deze evaluaties echter vaak als tijdrovend, onduidelijk en moeilijk hanteerbaar ervaren,
 wat ertoe leidt dat huisartsen ze minder frequent of inconsistent invullen \autocite{Merckx2023}. Dit belemmert niet alleen
 de kwaliteit van de dataverzameling, maar ook de mogelijkheid tot structurele beleidsverbetering.
+
 Deze bachelorproef vertrekt vanuit deze concrete nood en onderzoekt in welke mate een digitale
 proof-of-concept interface de toegankelijkheidsevaluatie voor huisartsen kan vereenvoudigen.
 
@@ -44,10 +46,8 @@ en UGent indicatorensets en vragenlijsten ontwikkeld die huisartsen en praktijkm
 toelaten de toegankelijkheid van hun praktijk systematisch te evalueren \autocite{Merckx2023}. Uit pilootstudies en
 gesprekken met huisartsen binnen Eerstelijnszone Aalst blijkt echter dat deze evaluatie-instrumenten
 in de praktijk ernstige tekortkomingen vertonen. Huisartsen geven aan dat de bestaande vragenlijsten
-te lang en te complex zijn om naast de consultaties in te vullen. Bovendien laten de criteria ruimte
-voor uiteenlopende interpretaties, waardoor de betrouwbaarheid en vergelijkbaarheid van de
-verzamelde data sterk vermindert \autocite{Rampelberg2025a}. Bijgevolg worden de evaluaties slechts sporadisch en inconsistent
-uitgevoerd, wat de bruikbaarheid voor beleidsvorming ernstig beperkt.
+te lang en te complex zijn om naast de consultaties in te vullen. Bijgevolg worden de evaluaties
+slechts sporadisch uitgevoerd, wat de bruikbaarheid voor beleidsvorming ernstig beperkt \autocite{Rampelberg2025a}.
 
 Er bestaat momenteel geen gevalideerd digitaal hulpmiddel dat specifiek afgestemd is op de
 toegankelijkheidsevaluaties van Vlaamse huisartsenpraktijken. De combinatie van tijdsdruk,
@@ -68,13 +68,22 @@ De centrale onderzoeksvraag van dit onderzoek luidt:
   en gebruiksvriendelijker maken dan de huidige vragenlijsten?}
 \end{quote}
 
-Om deze hoofdvraag concreet en onderbouwd te beantwoorden, worden twee aanvullende deelvragen
-geformuleerd. Ten eerste wordt nagegaan in welke mate de interface bijdraagt aan een meer
-consistente interpretatie en beantwoording van toegankelijkheidsindicatoren door huisartsen.
-Ten tweede wordt onderzocht in welke mate de interface de cognitieve belasting vermindert tijdens
-het uitvoeren van een toegankelijkheidsevaluatie in vergelijking met een klassieke vragenlijst.
-Samen maken deze deelvragen het mogelijk om niet alleen vast te stellen óf de interface een
-verbetering vormt, maar ook waaróm en op welke manier zij effectiever is dan de huidige aanpak.
+Om deze hoofdvraag concreet en onderbouwd te beantwoorden, worden twee deelvragen geformuleerd.
+
+Ten eerste wordt nagegaan in welke mate de interface de tijd reduceert
+die nodig is om een volledige toegankelijkheidsevaluatie af te ronden. Hierbij wordt
+\textit{snelheid} geoperationaliseerd als de gemeten sessieduur via Microsoft Clarity,
+waarbij zowel de registratiefase als het invullen van de vragenlijst worden gemeten.
+
+Ten tweede wordt onderzocht in welke mate de interface als gebruiksvriendelijk wordt
+ervaren door huisartsen en praktijkmedewerkers. Hierbij wordt \textit{gebruiksvriendelijkheid}
+geoperationaliseerd aan de hand van de System Usability Scale (SUS), een gestandaardiseerde
+meetschaal waarbij een score van 68 of hoger als aanvaardbaar wordt beschouwd
+\autocite{Brooke1995}, aangevuld met kwalitatieve feedback verzameld via een digitale vragenlijst.
+
+Samen maken deze deelvragen het mogelijk om niet alleen vast te stellen of de interface
+een verbetering vormt, maar ook op welke concrete aspecten zij effectiever is dan de
+huidige aanpak.
 
 \section{\IfLanguageName{dutch}{Onderzoeksdoelstelling}{Research objective}}%
 \label{sec:onderzoeksdoelstelling}
@@ -82,7 +91,7 @@ verbetering vormt, maar ook waaróm en op welke manier zij effectiever is dan de
 % Wat is het beoogde resultaat van je bachelorproef? Wat zijn de criteria voor succes? Beschrijf die zo concreet mogelijk. Gaat het bv.\ om een proof-of-concept, een prototype, een verslag met aanbevelingen, een vergelijkende studie, enz.
 
 Het doel van dit toegepaste onderzoek is tweeledig. Enerzijds wordt onderzocht welke elementen
-van de huidige evaluatie-instrumenten het meeste tijdverlies, verwarring of inconsistentie
+van de huidige evaluatie-instrumenten het meeste tijdverlies of verwarring
 veroorzaken bij huisartsen en praktijkmedewerkers. Anderzijds wordt op basis van deze inzichten
 een proof-of-concept digitale interface ontworpen en empirisch geëvalueerd.
 
@@ -91,15 +100,17 @@ visueel ondersteunt en efficiënter maakt, aangevuld met een analyse van de gebr
 bachelorproef kan als succesvol beschouwd worden wanneer de interface aantoont dat zij de invultijd
 reduceert, de gebruiksvriendelijkheid verhoogt en het evaluatieproces voor huisartsen en
 praktijkmedewerkers daadwerkelijk vereenvoudigt. Daartoe wordt een combinatie van kwantitatieve
-en kwalitatieve evaluatiemethoden ingezet: tijdsmetingen, de System Usability Scale (SUS),
-de think-aloud-methode en heatmap-analyses via tools zoals Microsoft Clarity.
+en kwalitatieve evaluatiemethoden ingezet: sessieduurmetingen via Microsoft Clarity, de System Usability Scale (SUS) afgenomen via
+Google Forms, en aanvullende kwalitatieve feedback via open vragen in dezelfde bevraging.
 
 Hoewel toegankelijkheid een breed en multidimensionaal begrip is, focust deze bachelorproef
-bewust op een afgebakende selectie van toegankelijkheidsindicatoren, namelijk die indicatoren
-die op basis van literatuur en verkennende interviews het vaakst als tijdrovend, moeilijk
-interpreteerbaar of inconsistent worden ervaren. Door deze afbakening kan de effectiviteit van
-de proof-of-concept interface op een haalbare en diepgaande manier worden onderzocht binnen
-de context van Eerstelijnszone Aalst.
+bewust op een afgebakende selectie van toegankelijkheidsindicatoren. Deze indicatoren zijn
+niet willekeurig gekozen, maar zijn rechtstreeks overgenomen uit het voorafgaand onderzoek
+van \textcite{Merckx2023}, waarin een gevalideerde set van indicatoren werd ontwikkeld die
+specifiek afgestemd is op de Vlaamse eerstelijnszorg. Door deze bestaande en onderbouwde
+indicatorenset als vertrekpunt te nemen, kan de effectiviteit van de proof-of-concept
+interface op een haalbare en diepgaande manier worden onderzocht binnen de context van
+Eerstelijnszone Aalst.
 
 \section{\IfLanguageName{dutch}{Opzet van deze bachelorproef}{Structure of this bachelor thesis}}%
 \label{sec:opzet-bachelorproef}
