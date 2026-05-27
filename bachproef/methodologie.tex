@@ -38,9 +38,10 @@ waardoor het ontwerp vroeg in het proces aan de werkgroep kon worden voorgelegd.
 
 Het Figma-prototype werd vervolgens gepresenteerd aan de werkgroep van Eerstelijnszone Aalst, 
 bestaande uit huisartsen, onderzoekers en medewerkers van Huisartsenwachtpost regio Aalst die nauw betrokken zijn bij de toegankelijkheidsproblematiek. 
-Tijdens deze presentatie werd samen met de werkgroep het prototype doorlopen. 
-En werd feedback gegeven op het ontwerp en de gebruiksvriendelijkheid. Deze aanpak laat toe om vroegtijdig te valideren of het voorgestelde concept aansluit bij de noden van de doelgroep, zonder dat hiervoor reeds een werkende implementatie vereist is. 
+Tijdens deze presentatie werd samen met de werkgroep het prototype doorlopen en werd feedback gegeven op het ontwerp en de gebruiksvriendelijkheid. 
+Deze aanpak laat toe om vroegtijdig te valideren of het voorgestelde concept aansluit bij de noden van de doelgroep, zonder dat hiervoor reeds een werkende implementatie vereist is. 
 De verzamelde feedback werd kwalitatief geanalyseerd en vertaald naar een set concrete aanpassingen aan het ontwerp, die als input dienden voor de ontwikkelfase.
+
 De output van deze fase bestaat uit een bijgewerkt Figma-prototype dat de verwerkte feedback weerspiegelt en als blauwdruk dient voor de technische implementatie in de volgende fase.
 
 \subsection{Fase 2: Implementatie}
@@ -55,15 +56,87 @@ De backend wordt apart gedeployed zodat de API-aanroepen vanuit de Angular-appli
 Deze fase resulteert in een volledig werkende en publiek toegankelijke proof-of-concept interface.
 \subsection{Fase 3: Gebruikerstesting en evaluatie}
 \label{ter:testing}
-De derde fase omvat de gebruikerstesting, waarin de gehoste applicatie wordt voorgelegd aan een groep huisartsen en praktijkmedewerkers. 
-De deelnemers doorlopen de interface zelfstandig en vullen na afloop een vragenlijst in die twee componenten bevat: de System Usability Scale (SUS) voor een gestandaardiseerde meting van de ervaren gebruiksvriendelijkheid, en een open feedbackgedeelte waarin deelnemers vrij kunnen aangeven wat goed werkte en wat voor verbetering vatbaar is.
-De SUS-score wordt berekend op basis van de tien gestandaardiseerde stellingen en gepositioneerd ten opzichte van de internationaal erkende drempelwaarde van 75, die geldt als indicatie voor goede usability. 
-De vrije feedback wordt kwalitatief geanalyseerd en gegroepeerd per thema, zodat terugkerende knelpunten of positieve bevindingen duidelijk naar voren komen. 
-De combinatie van beide meetmethoden laat toe om zowel een kwantitatief oordeel als een inhoudelijk genuanceerd beeld te vormen van de gebruikservaring.
+
+De derde fase omvat de gebruikerstesting, waarin de gehoste applicatie wordt voorgelegd 
+aan een groep huisartsen en praktijkmedewerkers.
+
+\subsubsection{Selectie van deelnemers}
+Voor de gebruikersevaluatie werden in totaal 32 praktijken en medewerkers aangeschreven 
+via e-mail en via tussenpersonen. Uiteindelijk namen 12 personen effectief deel aan de 
+evaluatie, wat neerkomt op een responsgraad van ongeveer 37,5\%. De deelnemers waren 
+afkomstig uit verschillende rollen binnen huisartsenpraktijken, namelijk huisartsen, 
+administratief personeel en andere medewerkers. Dit zorgt voor een zekere variatie in 
+gebruikersprofielen.
+
+De steekproef is beperkt in omvang, wat eigen is aan de aard van een 
+proof-of-concept onderzoek. In deze fase is het primaire doel niet om 
+statistisch representatieve uitspraken te doen over alle 
+huisartsenpraktijken, maar wel om een eerste indicatie te krijgen van de 
+gebruiksvriendelijkheid en om concrete verbeterpunten te identificeren. 
+Een steekproef van 12 deelnemers is voor deze verkennende fase voldoende 
+om waardevolle inzichten te verzamelen. Bij een eventuele verdere 
+uitwerking of opschaling van de applicatie zal een nieuwe evaluatie met 
+een grotere en meer representatieve steekproef noodzakelijk zijn om 
+bredere conclusies te kunnen trekken.
+
+\subsubsection{Rekrutering}
+De rekrutering verliep via twee kanalen: directe e-mailcontact en persoonlijke 
+tussenpersonen. Uit dit proces bleek dat persoonlijk contact een duidelijk hogere respons 
+opleverde dan koude e-mails. Dit is een nuttige methodologische observatie voor toekomstig 
+onderzoek met vergelijkbare doelgroepen.
+
+\subsubsection{Mogelijke bias}
+Geen van de deelnemers had voorafgaande kennis van het project, wat kennisbias grotendeels 
+uitsluit. Wel dient rekening gehouden te worden met leeftijdsgerelateerde technologische 
+vaardigheid als mogelijke bron van bias. Jongere gebruikers zijn doorgaans meer vertrouwd 
+met nieuwe digitale applicaties, waardoor hun evaluatie positiever of vlotter kan verlopen 
+dan die van oudere gebruikers.
+
+\subsubsection{Evaluatiemethoden}
+De deelnemers doorlopen de interface zelfstandig en vullen na afloop een vragenlijst in 
+die twee componenten bevat: de System Usability Scale (SUS) voor een gestandaardiseerde 
+meting van de ervaren gebruiksvriendelijkheid, en een open feedbackgedeelte waarin 
+deelnemers vrij kunnen aangeven wat goed werkte en wat voor verbetering vatbaar is.
+
+Bijkomend werd de registratietijd en de effectieve testtijd geregistreerd, om later te kunnen vergelijken of 
+er een verband bestaat tussen de tijd die een gebruiker nodig heeft en de ervaren gebruiksvriendelijkheid.
+
+Daarnaast werd gebruik gemaakt van Microsoft Clarity, een gedragsanalytisch platform dat 
+heatmaps en sessieopnames genereert op basis van het werkelijke gebruik van de applicatie. 
+Dit laat toe om te observeren waar gebruikers klikken, waar ze aarzelen en welke 
+onderdelen van de interface mogelijk verwarrend zijn, zonder dat de gebruiker dit zelf 
+expliciet hoeft te rapporteren.
+
 \subsection{Fase 4: Analyse en rapportering}
 \label{ter:analyse}
-In de vierde fase worden de verzamelde gegevens geanalyseerd en geïnterpreteerd. 
-De SUS-scores worden berekend en gepositioneerd ten opzichte van de drempelwaarde van 75. 
-De kwalitatieve feedback van de deelnemers wordt thematisch gecodeerd om terugkerende patronen te identificeren. 
-De combinatie van beide datatypen maakt het mogelijk om een genuanceerd antwoord te formuleren op de centrale onderzoeksvraag en om te beoordelen welke onderdelen van de interface effectief bijdragen aan efficiëntie en gebruiksvriendelijkheid, 
-en welke nog verdere verfijning vereisen.
+In de vierde fase worden de verzamelde gegevens geanalyseerd en 
+geïnterpreteerd.
+
+De SUS-scores worden berekend op basis van de tien gestandaardiseerde 
+stellingen en gepositioneerd ten opzichte van de internationaal erkende 
+drempelwaarde van 75, die geldt als indicatie voor goede usability.
+
+De vrije feedback wordt kwalitatief geanalyseerd via thematische codering. 
+Concreet betekent dit dat alle open antwoorden eerst volledig werden 
+doorgelezen. Deze antwoorden werden vervolgens gegroepeerd in overkoepelende 
+thema's, zodat terugkerende knelpunten of positieve bevindingen duidelijk 
+naar voren komen.
+
+Naast de SUS-scores en kwalitatieve feedback werd ook de registratietijd 
+en de effectieve testtijd per deelnemer geregistreerd en vergeleken. 
+De registratietijd verwijst naar de tijd die een gebruiker nodig had om 
+zich aan te melden en de praktijkgegevens in te vullen, terwijl de 
+testtijd de duur van de eigenlijke interactie met de applicatie meet. 
+Door beide tijden naast elkaar te leggen kan worden nagegaan of gebruikers 
+die langer nodig hadden ook een lagere SUS-score rapporteerden, en of 
+bepaalde onderdelen van de interface systematisch meer tijd in beslag namen.
+
+De bevindingen uit Microsoft Clarity worden als aanvullende laag naast de 
+vragenlijstresultaten gelegd, om te controleren of het gerapporteerde gedrag 
+van gebruikers overeenkomt met hun werkelijke interactie met de applicatie.
+
+De combinatie van deze meetmethoden laat toe om zowel een kwantitatief 
+oordeel als een inhoudelijk genuanceerd beeld te vormen van de 
+gebruikservaring, en om te beoordelen welke onderdelen van de interface 
+effectief bijdragen aan efficiëntie en gebruiksvriendelijkheid en welke 
+nog verdere verfijning vereisen.
