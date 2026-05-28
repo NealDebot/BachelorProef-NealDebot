@@ -5,36 +5,34 @@
 \label{sec:doel}
 
 Het doel van het ontwerp was het ontwikkelen van een gebruiksvriendelijke interface die aansluit bij de noden van zorgverleners binnen de eerstelijnszorg.
-Aangezien de doelgroep voornamelijk bestaat uit artsen werd er vooral aandacht besteed aan eenvoud, efficiëntie en duidelijkheid.
-
+Aangezien de doelgroep voornamelijk bestaat uit huisartsen en andere eerstelijns zorgverleners, werd er vooral aandacht besteed aan eenvoud, efficiëntie en duidelijkheid.
+ 
 Daarnaast moest het ontwerp intuïtief zijn zodat gebruikers zonder uitgebreide technische kennis de applicatie vlot kunnen gebruiken.
 
 \section{Eerste ontwerp in Figma}
 \label{sec:eerste ontwerp}
 
-In een eerste fase werd een prototype uitgewerkt in Figma. 
+In een eerste fase werd een prototype uitgewerkt in Figma.
 Dit prototype bevatte de belangrijkste functionaliteiten van de applicatie en gaf een eerste beeld van de gebruikersinterface.
+ 
+Het ontwerp bestond uit een duidelijke navigatiebalk bovenaan met de belangrijkste onderdelen van de applicatie, namelijk ``Vragenlijsten'' en ``Praktijk informatie''.
+Op de hoofdpagina werd een onderscheid gemaakt tussen in te vullen vragenlijsten en reeds ingevulde vragenlijsten, zoals te zien is in onderstaande afbeelding.
 
-Het ontwerp bestond uit een duidelijke navigatiebalk bovenaan met de belangrijkste onderdelen van de applicatie, namelijk "Vragenlijsten'' en "Praktijk informatie''.
-op de hoofdpagina werd een onderscheid gemaakt tussen in te vullen vragenlijsten en reeds ingevulde vragenlijsten. Zoals te zien is in volgende afbeelding.
-
-\begin{figure}
+\begin{figure}[H]
     \centering
     \includegraphics[width=0.8\textwidth]{mock1Hoofdpagina.png}
-    \caption[Vragenlijsten pagina.]{Dit is de vragenlijste pagina, de ingelogde gebruiker krijgt hier zowel de openstaande vragenlijsten als hun reeds ingevulde vragenlijsten te zien.}
+    \caption[Vragenlijsten pagina.]{Vragenlijste pagina, de ingelogde gebruiker krijgt hier zowel de openstaande vragenlijsten als hun reeds ingevulde vragenlijsten te zien.}
 \end{figure}
 
-Daarna werd een rapportpagina ontworpen waarin de resultaten van een vragenlijst overzichtelijk worden weergegeven. 
-Deze pagina bevatte onder andere een samenvatting en een meer uitgebreide uitleg van de resultaten, 
-zodat de gebruikers snel inzicht krijgen in de gegevens. Zie volgende afbeelding.
+Het eerste prototype bevatte ook een rapportpagina waarop de resultaten van een vragenlijst overzichtelijk worden weergegeven.
+Via het oog-icoon bij een ingevulde vragenlijst kon de gebruiker naar deze pagina navigeren.
+De pagina bevatte onder andere een samenvatting en een meer uitgebreide uitleg van de resultaten, zodat gebruikers snel inzicht krijgen in de gegevens. Zie onderstaande afbeelding.
 
-\begin{figure}
+\begin{figure}[H]
     \centering
     \includegraphics[width=0.8\textwidth]{mock2Rapporten.png}
     \caption[Rapport van een vragenlijst]{Op deze pagina krijgt de gebruiker een rapport te zien van een reeds ingevulde vragenlijst. Hier komt een uitgebreide uitleg voor het verbeteren van de toegankelijkheid van hun praktijk.}
 \end{figure}
-
-Men kon naar deze pagina navigeren door op het oog icoon te klikken bij een ingevulde vragenlijst.
 
 Bij het ontwerp werd gekozen voor een rustige en professionele vormgeving met duidelijke tabellen en gestructureerde informatieblokken.
 
@@ -42,68 +40,66 @@ Bij het ontwerp werd gekozen voor een rustige en professionele vormgeving met du
 \label{sec:Feedback}
 
 Het eerste ontwerp werd voorgesteld aan de werkgroep van de eerstelijnszorg in Aalst.
-Deze evaluatie leverde waardevolle inzichten op vanut de praktijk.
-
+Deze evaluatie leverde waardevolle inzichten op vanuit de praktijk.
+ 
 De belangrijkste feedbackpunten waren:
-
+ 
 \begin{itemize}
     \item De interface moest eenvoudiger en intuïtiever zijn.
     \item Minder iconen gebruiken voor acties.
-    \item De rapporten meer afscheiden van de vragenlijsten.
+    \item De rapporten visueel en structureel meer afscheiden van de vragenlijsten, zodat beide onderdelen duidelijk van elkaar te onderscheiden zijn.
 \end{itemize}
-
-Daarnaast werd benadrukt dat tijdsdruk een belanrijke factor is in de praktijk van artsen, waardoor efficiëntie en duidelijkheid cruciaal zijn.
+ 
+Daarnaast werd benadrukt dat tijdsdruk een belangrijke factor is in de praktijk van artsen, waardoor efficiëntie en duidelijkheid cruciaal zijn.
 Uit deze meeting is ook gebleken dat niet alle indicatoren van voorgaand onderzoek \autocite{Merckx2023} elke keer opnieuw gevraagd moesten worden.
-
-
 
 \section{Iteraties en Verbeteringen}
 \label{sec:iteraties}
 
-Op basis van de ontvangen feedback werd het ontwerp grondig herwerkt. 
+Op basis van de ontvangen feedback werd het ontwerp grondig herwerkt.
 De focus verschoof hierbij van louter functionaliteit naar een optimale gebruikerservaring.
 
 \subsection{Duidelijke structuur en navigatie}
 \label{subsec:structuur}
 
-In de finale ontwerpen werd gekozen voor een duidelijke opdeling in hoofdsecties, zoals "Vragenlijsten \& rapporten'' en "Praktijk gegevens''.
-Binnen deze secties werd gewerkt met tabbladen, zoals "Algemene informatie'', "Praktijk kenmerken'' en "Team samenstelling''.
-
-Deze hiërarchische structuur zorgt ervoor dat gebruikers stapsgewijs door de applicatie kunnen navigeren.
-Waardoor cognitieve belasting verminderd wordt.
+In de finale ontwerpen werd gekozen voor een duidelijke opdeling in hoofdsecties, zoals ``Vragenlijsten \& Rapporten'' en ``Praktijk Gegevens''.
+Binnen deze secties werd gewerkt met tabbladen, zoals ``Algemene informatie'', ``Praktijk kenmerken'' en ``Team samenstelling''.
+ 
+Deze hiërarchische structuur zorgt ervoor dat gebruikers stapsgewijs door de applicatie kunnen navigeren, waardoor de cognitieve belasting verminderd wordt.
 
 \subsection{Praktijk gegevens}
 \label{subsec:praktijkgegevens}
 
-Uit de feedback was gebleken dat veel van de indicatoren die gebruikt werden om de vragen op te stellen niet elke keer weer moesten gevraagd worden.
-Het ging dan vaak over gegevens die de praktijk omschreven, zoals "wat is het gebruikte betalingssysteem van de praktijk?'' en "wat is de samenstelling van het team?''.
-
-Hierdoor is er beslist om per praktijk met één account te gaan werken en deze gegevens op te slaan.
-Om deze gegevens dan ook effectief te kunnen raadplegen en aanpassen is er een Praktijk gegevens pagina ontworpen.
-Deze pagina is nog eens opgedeeld in drie tabs:
-
+Uit de feedback was gebleken dat veel van de indicatoren die gebruikt werden om de vragen op te stellen niet elke keer opnieuw gevraagd hoeven te worden.
+Het ging dan vaak over gegevens die de praktijk omschrijven, zoals ``Wat is het gebruikte betalingssysteem van de praktijk?'' en ``Wat is de samenstelling van het team?''.
+ 
+Hierdoor is er beslist om per praktijk met één account te werken en deze gegevens op te slaan.
+Om deze gegevens effectief te kunnen raadplegen en aanpassen, is er een Praktijk Gegevens-pagina ontworpen.
+Deze pagina is opgedeeld in drie tabbladen:
+ 
 \begin{itemize}
-    \item Algemene informatie: hier vindt men het telefoon nummer, de email en de adressen van de praktijk terug.
-    \item Praktijk kenmerken: hier vindt men algemene kenmerken van de praktijk en alle informatie omtrend hun praktijk netwerk terug.
-    \item Team samenstelling: hier vindt men alle informatie over de huisartsen terug en welke functies er nog aanwezig zijn in de praktijk.
+    \item \textbf{Algemene informatie:} hier vindt men het telefoonnummer, de e-mail en de adressen van de praktijk terug.
+    \item \textbf{Praktijk kenmerken:} hier vindt men algemene kenmerken van de praktijk en alle informatie omtrent hun praktijknetwerk terug.
+    \item \textbf{Team samenstelling:} hier vindt men alle informatie over de huisartsen terug en welke functies er nog aanwezig zijn in de praktijk.
 \end{itemize}
-
-Door deze gegevens hier te vragen kan de indicatoren set voor de vragenlijsten verminderd worden.
-Dit zorgt er voor dat het invullen van een vragenlijst minder tijd in beslag zal nemen.
+ 
+Door deze gegevens hier op te slaan, kan de indicatorenset voor de vragenlijsten verminderd worden.
+Dit zorgt ervoor dat het invullen van een vragenlijst minder tijd in beslag neemt.
+ 
 
 \subsection{Overzicht van vragenlijsten}
 \label{subsec:vragenlijsten}
 
 Het overzicht van vragenlijsten werd vereenvoudigd en geoptimaliseerd voor snelle actie.
-In plaats van complexe lijsten werd gekozen voor een duidelijke tabel met: 
-
+In plaats van complexe lijsten werd gekozen voor een duidelijke tabel met:
+ 
 \begin{itemize}
     \item Naam van de vragenlijst
     \item Deadline
     \item Voortgang (visueel weergegeven met een progressiebalk)
-    \item Directe actieknoppen zoals "Start vragenlijst'' en "Verder invullen''
+    \item Directe actieknoppen zoals ``Start vragenlijst'' en ``Verder invullen''
 \end{itemize}
-
+ 
 Deze aanpak maakt het voor gebruikers mogelijk om in één oogopslag te zien wat hun prioriteiten zijn.
 
 \subsection{Rapport pagina}
@@ -111,47 +107,53 @@ Deze aanpak maakt het voor gebruikers mogelijk om in één oogopslag te zien wat
 
 De rapportpagina werd herwerkt met een duidelijke scheiding tussen een samenvatting en een uitgebreide uitleg.
 Daarnaast werd een zijbalk toegevoegd met een overzicht van alle gegenereerde rapporten.
-
-De rapportpagina is ook geen aparte pagina meer maar is een onderdeel geworden van de Vragenlijsten \& rapporten pagina.
-Om de rapporten te bekijken kan men via de tabs navigeren.
+ 
+De rapportpagina is ook geen aparte pagina meer, maar is een onderdeel geworden van de pagina ``Vragenlijsten \& Rapporten''.
+Via de tabbladen kan men eenvoudig wisselen tussen het overzicht van de vragenlijsten en de gegenereerde rapporten. 
+Dit sluit direct aan op de feedbackpunt om rapporten duidelijker te scheiden van de vragenlijsten.
 
 \subsection{Consistentie en visuele rust}
 \label{subsec:consistentie}
 
-In het finale ontwerp werd sterk ingezet op consistentie in kleuren, knoppen en layout. 
-Dit zorgt voor een herkenbare ebruikservaring doorheen de volledige applicatie.
-
+In het finale ontwerp werd sterk ingezet op consistentie in kleuren, knoppen en layout.
+Dit zorgt voor een herkenbare gebruikservaring doorheen de volledige applicatie.
+ 
 Er werd gekozen voor een rustige en professionele vormgeving met voldoende witruimte, zodat informatie duidelijk leesbaar blijft en de gebruiker niet overweldigd wordt.
 
 \subsection{Finale ontwerp}
 \label{subsec:finaleontwerp}
 
-\begin{figure}
+De onderstaande afbeeldingen tonen het finale ontwerp van de applicatie na alle iteraties.
+In vergelijking met het eerste prototype is de structuur aanzienlijk vereenvoudigd: rapporten en vragenlijsten zijn via tabbladen gescheiden, iconen zijn gereduceerd tot een minimum, en de praktijkgegevens zijn ondergebracht in een eigen sectie met drie duidelijke tabbladen.
+
+\begin{figure}[H]
     \centering
     \includegraphics[width=0.8\textwidth]{Overzicht_Vragenlijsten.png}
     \caption[Overzicht vragenlijsten]{Deze afbeelding toont de vragenlijsten pagina, hier kan de gebruiker de openstaande vragenlijsten raadplegen en verder invullen.}
 \end{figure}
 
-\begin{figure}
+\begin{figure}[H]
     \centering
     \includegraphics[width=0.8\textwidth]{Overzicht_Rapporten.png}
     \caption[Overzicht rapporten]{Deze afbeelding toont de rapporten pagina, hier kan de gebruiker de gegenereerde rapporten raadplegen.}
 \end{figure}
 
-\begin{figure}
+\begin{figure}[H]
     \centering
     \includegraphics[width=0.8\textwidth]{Algemene_Informatie.png}
     \caption[Algemene informatie]{Deze afbeelding toont de algemene informatie pagina, hier kan de gebruiker de algemene informatie van de praktijk raadplegen en aanpassen.}
 \end{figure}
 
-\begin{figure}
+\begin{figure}[H]
     \centering
     \includegraphics[width=0.8\textwidth]{Praktijk_Kenmerken.png}
     \caption[Praktijk kenmerken]{Deze afbeelding toont de praktijk kenmerken pagina, hier kan de gebruiker de praktijk kenmerken raadplegen en aanpassen.}
 \end{figure}
 
-\begin{figure}
+\begin{figure}[H]
     \centering
     \includegraphics[width=0.8\textwidth]{Team_Samenstelling.png}
     \caption[Team samenstelling]{Deze afbeelding toont de team samenstelling pagina, hier kan de gebruiker de team samenstelling raadplegen en aanpassen.}
 \end{figure}
+
+Dit finale ontwerp vormt de basis voor de implementatie die in het volgende hoofdstuk wordt besproken.
