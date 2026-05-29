@@ -35,12 +35,14 @@ Om deze vraag te beantwoorden wordt het onderzoek opgedeeld in vier opeenvolgend
 De eerste fase bestaat uit de ontwerpfase, waarin op basis van de bestaande indicatorensets en de literatuur een eerste visueel prototype van de interface werd uitgetekend in Figma. 
 De keuze voor Figma als ontwerptool is gemotiveerd door de mogelijkheid om snel een klikbaar, interactief prototype te realiseren zonder enige implementatie, 
 waardoor het ontwerp vroeg in het proces aan de werkgroep kon worden voorgelegd. 
+\medskip
 
 Het Figma-prototype werd vervolgens gepresenteerd aan de werkgroep van Eerstelijnszone Aalst, 
 bestaande uit huisartsen, onderzoekers en medewerkers van Huisartsenwachtpost regio Aalst die nauw betrokken zijn bij de toegankelijkheidsproblematiek. 
 Tijdens deze presentatie werd samen met de werkgroep het prototype doorlopen en werd feedback gegeven op het ontwerp en de gebruiksvriendelijkheid. 
 Deze aanpak laat toe om vroegtijdig te valideren of het voorgestelde concept aansluit bij de noden van de doelgroep, zonder dat hiervoor reeds een werkende implementatie vereist is. 
 De verzamelde feedback werd kwalitatief geanalyseerd en vertaald naar een set concrete aanpassingen aan het ontwerp, die als input dienden voor de ontwikkelfase.
+\medskip
 
 De output van deze fase bestaat uit een bijgewerkt Figma-prototype dat de verwerkte feedback weerspiegelt en als blauwdruk dient voor de technische implementatie in de volgende fase.
 
@@ -49,7 +51,8 @@ De output van deze fase bestaat uit een bijgewerkt Figma-prototype dat de verwer
 In de tweede fase wordt het goedgekeurde Figma-ontwerp technisch geïmplementeerd. 
 De frontend wordt gerealiseerd in Angular, met SurveyJS als bibliotheek voor de vragenlijstlogica. 
 Voor de backend wordt gebruikgemaakt van Express als Node.js-framework, Prisma als ORM en PostgreSQL als relationele databank. 
-Deze technologiekeuzes zijn gemotiveerd door hun onderlinge compatibiliteit, de brede community-ondersteuning en de mogelijkheid om de volledige stack lokaal te draaien, wat aansluit bij de privacyvereisten die inherent zijn aan de verwerking van gegevens over huisartsenpraktijken.
+Deze technologiekeuzes zijn gemotiveerd door hun onderlinge compatibiliteit, de brede community-ondersteuning en de mogelijkheid om de volledige stack lokaal te draaien, wat aansluit bij de privacy vereisten die inherent zijn aan de verwerking van gegevens over huisartsenpraktijken.
+\medskip
 
 De applicatie wordt na implementatie gehost via GitHub Pages, wat een laagdrempelige en gratis hostingoplossing biedt voor statische frontend-applicaties. 
 De backend wordt apart gedeployed zodat de API-aanroepen vanuit de Angular-applicatie correct kunnen worden afgehandeld. 
@@ -67,6 +70,7 @@ evaluatie, wat neerkomt op een responsgraad van ongeveer 35,3\%. De deelnemers w
 afkomstig uit verschillende rollen binnen huisartsenpraktijken, namelijk huisartsen, 
 administratief personeel en andere medewerkers. Dit zorgt voor een zekere variatie in 
 gebruikersprofielen.
+\medskip
 
 De steekproef is beperkt in omvang, wat eigen is aan de aard van een 
 proof-of-concept onderzoek. In deze fase is het primaire doel niet om 
@@ -82,7 +86,7 @@ bredere conclusies te kunnen trekken.
 \subsubsection{Rekrutering}
 De rekrutering verliep via twee kanalen: directe e-mailcontact en persoonlijke 
 tussenpersonen. Uit dit proces bleek dat persoonlijk contact een duidelijk hogere respons 
-opleverde dan koude e-mails. Dit is een nuttige methodologische observatie voor toekomstig 
+opleverde dan e-mails van een onbekende. Dit is een nuttige methodologische observatie voor toekomstig 
 onderzoek met vergelijkbare doelgroepen.
 
 \subsubsection{Mogelijke bias}
@@ -97,9 +101,11 @@ De deelnemers doorlopen de interface zelfstandig en vullen na afloop een vragenl
 die twee componenten bevat: de System Usability Scale (SUS) voor een gestandaardiseerde 
 meting van de ervaren gebruiksvriendelijkheid, en een open feedbackgedeelte waarin 
 deelnemers vrij kunnen aangeven wat goed werkte en wat voor verbetering vatbaar is.
+\medskip
 
 Bijkomend werd de registratietijd en de effectieve testtijd geregistreerd, om later te kunnen vergelijken of 
 er een verband bestaat tussen de tijd die een gebruiker nodig heeft en de ervaren gebruiksvriendelijkheid.
+\medskip
 
 Daarnaast werd gebruik gemaakt van Microsoft Clarity, een gedragsanalytisch platform dat 
 heatmaps en sessieopnames genereert op basis van het werkelijke gebruik van de applicatie. 
@@ -111,16 +117,19 @@ expliciet hoeft te rapporteren.
 \label{ter:analyse}
 In de vierde fase worden de verzamelde gegevens geanalyseerd en 
 geïnterpreteerd.
+\medskip
 
 De SUS-scores worden berekend op basis van de tien gestandaardiseerde 
 stellingen en gepositioneerd ten opzichte van de internationaal erkende 
 drempelwaarde van 75, die geldt als indicatie voor goede usability.
+\medskip
 
 De vrije feedback wordt kwalitatief geanalyseerd via thematische codering. 
 Concreet betekent dit dat alle open antwoorden eerst volledig werden 
 doorgelezen. Deze antwoorden werden vervolgens gegroepeerd in overkoepelende 
 thema's, zodat terugkerende knelpunten of positieve bevindingen duidelijk 
-naar voren komen.
+naar voor komen.
+\medskip
 
 Naast de SUS-scores en kwalitatieve feedback werd ook de registratietijd 
 en de effectieve testtijd per deelnemer geregistreerd en vergeleken. 
@@ -130,10 +139,12 @@ testtijd de duur van de eigenlijke interactie met de applicatie meet.
 Door beide tijden naast elkaar te leggen kan worden nagegaan of gebruikers 
 die langer nodig hadden ook een lagere SUS-score rapporteerden, en of 
 bepaalde onderdelen van de interface systematisch meer tijd in beslag namen.
+\medskip
 
 De bevindingen uit Microsoft Clarity worden als aanvullende laag naast de 
 vragenlijstresultaten gelegd, om te controleren of het gerapporteerde gedrag 
 van gebruikers overeenkomt met hun werkelijke interactie met de applicatie.
+\medskip
 
 De combinatie van deze meetmethoden laat toe om zowel een kwantitatief 
 oordeel als een inhoudelijk genuanceerd beeld te vormen van de 

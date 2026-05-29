@@ -15,15 +15,17 @@ Deze ontkoppeling zorgt voor een schaalbare omgeving waarbij de front-end commun
 
 Voor de ontwikkeling van dit project is gekozen voor een monorepo-strategie. 
 Dit houdt in dat zowel de broncode van de front-end (Angular), de back-end (Express API) als de database-configuraties (Prisma) zijn ondergebracht in één enkele repository op GitHub.
+\medskip
 
 Het gebruik van een monorepo biedt binnen deze bachelorproef enkele significante voordelen:
 \begin{itemize}
     \item Gedeelde logica en types: TypeScript-interfaces en types kunnen eenvoudiger worden gedeeld tussen de client en de server, wat de consistentie van de data-afhandeling verhoogt.
-    \item Eenvoudig beheer: Met één centrale plek voor versiebeheer wordt het proces van "continuous integration'' en het bijhouden van wijzigingen over de hele stack heen overzichtelijker. \autocite{DBLP:journals/corr/abs-1810-09477}
+    \item Eenvoudig beheer: met één centrale plek voor versiebeheer wordt het proces van "continuous integration'' en het bijhouden van wijzigingen over de hele stack heen overzichtelijker. \autocite{DBLP:journals/corr/abs-1810-09477}
     \item Transparantie: De volledige codebase is publiek toegankelijk, wat bijdraagt aan de reproduceerbaarheid van het onderzoek.
     \item Kennisoverdracht en onderhoudbaarheid: Aangezien de applicatie na afloop van deze bachelorproef wordt overgedragen aan de stuurgroep van de eerstelijnszone Aalst, vereenvoudigt een monorepo-structuur het beheer en onderhoud van het project. Door alle onderdelen van de applicatie onder te brengen in één centrale repository blijft de volledige systeemarchitectuur overzichtelijk en wordt de overdracht van de codebase toegankelijker voor toekomstige ontwikkelaars of beheerders.
 \end{itemize}
 Hoewel een monorepo kan leiden tot een grotere en complexere repositorystructuur, wegen de voordelen op vlak van centrale documentatie, consistent versiebeheer en eenvoudiger kennisoverdracht in deze context zwaarder door.
+\medskip
 
 De monorepo werd gestructureerd volgens een duidelijke scheiding tussen de verschillende onderdelen van de applicatie. 
 Zowel de Angular-frontend, Express-backend werden ondergebracht in afzonderlijke directories binnen dezelfde repository. 
@@ -54,12 +56,14 @@ De focus lag hierbij op gebruiksvriendelijkheid, responsiviteit en een efficiën
 Er is gekozen voor Angular als primair framework. 
 Angular biedt een robuuste, component-gebaseerde structuur die uitermate geschikt is voor het bouwen van complexe Single Page Applications (SPA). 
 Door gebruik te maken van TypeScript wordt de codekwaliteit gewaarborgd middels static typing, wat de onderhoudbaarheid van de bachelorproef op lange termijn ten goede komt.
- 
+\medskip
+
 De keuze voor Angular is niet enkel gebaseerd op vertrouwdheid, maar vloeit ook voort uit concrete technische vereisten van het project. 
 De applicatie beheert meerdere gekoppelde formulieren: algemene informatie, praktijkkenmerken en teamsamenstellingen. Waarbij elk formulier dynamische lijsten bevat, zoals adressen en huisartsen.
 Angular's \texttt{ReactiveFormsModule} biedt hiervoor een gestructureerde aanpak via \texttt{FormGroup} en \texttt{FormArray}, waarbij validatie en toestandsbeheer declaratief worden afgehandeld.
 Zo wordt de ``Opslaan''-knop enkel actief wanneer alle velden geldig zijn, wat via \texttt{[disabled]="!teamForm.valid"} in de template wordt afgedwongen.
- 
+\medskip
+
 Een tweede technisch argument is het gebruik van Angular Signals, geïntroduceerd in Angular 16.
 In dit project wordt \texttt{signal()} en \texttt{effect()} ingezet in de gedeelde \texttt{PraktijkService}:
  
@@ -88,6 +92,7 @@ Deze plugin bovenop Tailwind levert kant-en-klare componenten (zoals buttons, mo
 Een cruciaal onderdeel van de applicatie is het afnemen van vragenlijsten over praktijktoegankelijkheid. 
 Hiervoor is SurveyJS geïntegreerd. SurveyJS stelt de applicatie in staat om dynamische, JSON-gebaseerde formulieren te renderen. 
 Dit biedt de nodige flexibiliteit om complexe logica (zoals conditionele vragen) toe te passen, wat essentieel is bij het gedetailleerd in kaart brengen van fysieke en digitale drempels in de zorgomgeving.
+\medskip
 
 De vragenlijststructuur wordt als JSON opgeslagen in de database en bij elke sessie opgehaald.
 Hierdoor kunnen vragenlijsten worden bijgewerkt zonder dat er code-aanpassingen vereist zijn, wat de beheersbaarheid voor toekomstige iteraties ten goede komt.
@@ -103,10 +108,12 @@ De back-end fungeert als de centrale logica-hub die verzoeken van de front-end v
 
 De API is ontwikkeld met Express.js, een minimalistisch webframework voor Node.js. 
 Express is gekozen vanwege de snelheid en de uitgebreide ondersteuning voor middleware, wat cruciaal is voor het afhandelen van HTTP-verzoeken en de beveiliging van de endpoints.
+\medskip
 
 Voor dit project is de routestructuur opgesplitst in vijf afzonderlijke routerbestanden: \texttt{praktijkRoutes}, \texttt{teamRoutes}, \texttt{vragenlijstRoutes}, \texttt{rapportRoutes} en \texttt{authRoutes}.
 Deze scheiding houdt elke module beheersbaar en maakt het eenvoudig om afzonderlijke domeinen van de API onafhankelijk van elkaar aan te passen.
- 
+\medskip
+
 Als alternatief werd NestJS overwogen. NestJS biedt een meer gestructureerde aanpak via decorators en een ingebouwde dependency injection-container, wat voordelen biedt bij grotere teams en langlopende projecten.
 Voor de schaal van dit proof-of-concept wegen deze voordelen echter niet op tegen de bijkomende complexiteit en leercurve.
 Express laat toe om dezelfde functionaliteit te realiseren met beduidend minder boilerplate, wat aansluit bij de beperkte doorlooptijd van dit project.
@@ -130,7 +137,8 @@ Bij het opslaan van een team worden eerst de huisartsen verwijderd die niet meer
 Deze aanpak is eenvoudig te implementeren, maar heeft als risico dat bij een onverwachte fout tussen het verwijderen en het aanmaken van records data verloren gaat.
 Om dit risico te beperken, wordt bij het aanmaken van een nieuwe praktijk al gebruikgemaakt van een Prisma-transactie in \texttt{authController.js}, waarbij het aanmaken van het team en de praktijk atomisch gebeurt.
 Voor toekomstige versies zou een gelijkaardige transactionele aanpak ook op de teambewerkingen toegepast kunnen worden.
- 
+\medskip
+
 Een tweede ontwerpbeslissing betreft de rapportgeneratie. 
 Wanneer een vragenlijst volledig is ingevuld (\texttt{vooruitgang === 100}), wordt automatisch een rapport aangemaakt.
 In dit proof-of-concept bevat het rapport statische modelinhoud, maar de architectuur voorziet reeds in de benodigde koppeling: het rapport wordt opgeslagen met een referentie naar het bijhorende antwoordrecord, zodat in een volgende iteratie de inhoud eenvoudig vervangen kan worden door een dynamisch gegenereerde analyse.
@@ -141,10 +149,12 @@ In dit proof-of-concept bevat het rapport statische modelinhoud, maar de archite
 Voor de interactie met de database wordt Prisma gebruikt als Object-Relational Mapper (ORM). 
 Prisma slaat een brug tussen de objectgeoriënteerde wereld van TypeScript en de relationele database. 
 Dankzij de automatische generatie van client-code en migratietools zorgt Prisma voor type-safe database-queries, waardoor runtime-fouten tot een minimum worden beperkt.
- 
+\medskip
+
 Ten opzichte van alternatieven zoals Sequelize of TypeORM biedt Prisma een bijkomend voordeel: het schema in \texttt{schema.prisma} fungeert als \textit{single source of truth} voor zowel de databasestructuur als de gegenereerde TypeScript-types.
 Dit betekent dat een aanpassing aan het datamodel automatisch doorvertaald wordt naar de correcte types in de API, zonder manuele synchronisatie.
- 
+\medskip
+
 Een concreet voorbeeld hiervan is de manier waarop gerelateerde data wordt opgevraagd.
 Via de \texttt{include}-syntax worden geneste relaties in één query opgehaald:
  
@@ -186,6 +196,7 @@ Om de relaties tussen de verschillende datapunten in kaart te brengen is er gest
 
 De vertaling van het bovenstaande conceptuele ERD naar de fysieke PostgreSQL database is uitgevoerd met de Prisma ORM.
 Prisma functioneert hierbij als de single source of truth.
+\medskip
 
 In plaats van handmatig SQL-tabellen aan te maken, is de datastructuur gedefinieerd in het schema.prisma bestand binnen de monorepo.
 Dit biedt enkele belangrijke technische voordelen voor dit project:
@@ -230,7 +241,8 @@ De persistentie van de data wordt verzorgd door PostgreSQL.
 Deze relationele database staat bekend om zijn betrouwbaarheid en ondersteuning voor complexe datatypen. 
 De database bevat tabellen voor onder andere gebruikersprofielen, praktijkgegevens en de resultaten van de uitgevoerde toegankelijkheidsscans. 
 Door de relationele structuur kunnen verbanden tussen verschillende evaluatiecriteria efficiënt worden opgeslagen en opgevraagd.
- 
+\medskip
+
 De keuze voor een relationele database is ingegeven door de aard van het datamodel.
 Het centrale entiteit \texttt{praktijk} is gekoppeld aan een \texttt{team} (één-op-één), aan meerdere \texttt{adressen} (één-op-veel) en aan meerdere \texttt{survey\_antwoorden} (één-op-veel).
 Een documentgeoriënteerde database zoals MongoDB zou deze geneste structuur kunnen opslaan als één enkel document, maar zou referentiële integriteit, zoals het garanderen dat een huisarts altijd aan een bestaand team gekoppeld blijft,niet op databaseniveau afdwingen.
@@ -241,7 +253,8 @@ PostgreSQL doet dit wel via foreign key constraints, wat de datakwaliteit bewaak
 
 Gezien de gevoeligheid van data binnen de gezondheidssector is een robuuste beveiliging noodzakelijk. 
 In plaats van een eigen authenticatiesysteem te bouwen, is er gekozen voor Auth0.
- 
+\medskip
+
 Auth0 is zowel in de front-end als de back-end geïmplementeerd:
  
 \begin{itemize}
@@ -258,9 +271,11 @@ Alle vijf routerbestanden zijn op deze manier beveiligd, waardoor er geen enkel 
 \label{hosting}
 
 Om de applicatie beschikbaar te maken voor evaluatie en gebruik, is een CI/CD-strategie (Continuous Integration / Continuous Deployment) toegepast.
+\medskip
 
 Front-end Hosting (GitHub Pages): De gecompileerde Angular-applicatie is gehost op GitHub Pages. 
 Dit biedt een kostenefficiënte en performante oplossing voor statische bestanden, waarbij updates automatisch worden gepusht zodra de code in de main branch van de GitHub-repository wordt bijgewerkt.
+\medskip
 
 Back-end Hosting (Railway): De Express API en de PostgreSQL-database zijn ondergebracht bij Railway. 
 Railway biedt een naadloze integratie voor Node.js applicaties en beheerde databases, waarbij automatische schaling en eenvoudige monitoring van de serverlogs mogelijk zijn.
